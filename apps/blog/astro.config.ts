@@ -3,6 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
+import remarkHeadingMarkers from "remark-heading-markers";
 import remarkToc from "remark-toc";
 import { SITE } from "./src/config";
 
@@ -25,6 +26,7 @@ export default defineConfig({
 					test: "Table of contents",
 				},
 			],
+			remarkHeadingMarkers,
 		],
 		shikiConfig: {
 			// For more themes, visit https://shiki.style/themes
