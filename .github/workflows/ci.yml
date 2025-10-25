@@ -24,6 +24,6 @@ jobs:
       - name: "Lint and format"
         run: nix flake check
       - name: "Install dependencies"
-        run: nix develop --command bash -c "npm ci"
+        run: nix develop --command bash -c "pnpm install --frozen-lockfile"
       - name: "Build the project"
-        run: nix develop --command bash -c "npm run build"
+        run: nix develop --command bash -c "pnpm run build"
