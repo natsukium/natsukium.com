@@ -1,0 +1,54 @@
+name: Test Plugins
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  check-changes:
+    name: Check file changes
+    runs-on: ubuntu-latest
+    outputs:
+      plugins: ${{ steps.filter.outputs.plugins }}
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: filter
+        with:
+          filters: |
+            plugins:
+              - 'plugins/**'
+
+  test-plugins:
+    name: Test plugin - ${{ matrix.plugin }}
+    needs: check-changes
+    if: needs.check-changes.outputs.plugins == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    strategy:
+      matrix:
+        plugin:
+          - remark-heading-markers
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: cachix/install-nix-action@fd24c48048070c1be9acd18c9d369a83f0fe94d7 # v31.8.1
+      - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
+        with:
+          name: natsukium
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      - name: "Setup pnpm cache"
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ~/.local/share/pnpm/store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: "Install plugin dependencies"
+        run: nix develop --command bash -c "pnpm install --filter ${{ matrix.plugin }}"
+      - name: "Run plugin tests"
+        run: nix develop --command bash -c "pnpm -C plugins/${{ matrix.plugin }} test"
