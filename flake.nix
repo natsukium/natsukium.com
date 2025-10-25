@@ -50,7 +50,7 @@
             settings.processes = {
               dev = {
                 command = ''
-                  ${lib.getExe' pkgs.nodejs "npm"} run dev
+                  ${lib.getExe pkgs.pnpm} run dev
                 '';
               };
             };
@@ -99,7 +99,8 @@
           devShells = {
             default = pkgs.mkShellNoCC {
               packages = with pkgs; [
-                nodejs
+                nodejs-slim
+                pnpm
               ];
               shellHook = config.pre-commit.installationScript;
             };
