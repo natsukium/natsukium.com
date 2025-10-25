@@ -1,0 +1,25 @@
+{
+	"name": "remark-heading-markers",
+	"version": "1.0.0",
+	"description": "A remark plugin that adds visual heading markers (##, ###, etc.) to the rendered heading text",
+	"main": "index.ts",
+	"types": "index.ts",
+	"type": "module",
+	"keywords": ["remark", "remark-plugin", "markdown", "heading", "unified"],
+	"scripts": {
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"peerDependencies": {
+		"unified": "^10.0.0 || ^11.0.0"
+	},
+	"devDependencies": {
+		"@types/mdast": "^4.0.0",
+		"remark-parse": "^11.0.0",
+		"remark-stringify": "^11.0.0",
+		"unified": "^11.0.0",
+		"vitest": "^2.0.0"
+	},
+	"author": "natsukium",
+	"license": "MIT"
+}
