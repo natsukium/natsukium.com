@@ -36,6 +36,7 @@
 
       perSystem =
         {
+          self',
           config,
           pkgs,
           lib,
@@ -93,6 +94,14 @@
               };
               nixfmt.enable = true;
             };
+          };
+
+          packages.ci = pkgs.buildEnv {
+            name = "ci-dependencies";
+            paths = with pkgs; [
+              pnpm
+              wrangler
+            ];
           };
 
           devShells = {
