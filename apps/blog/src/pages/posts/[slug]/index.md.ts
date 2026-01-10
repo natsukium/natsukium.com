@@ -1,7 +1,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
-import type { APIRoute } from "astro";
 import fs from "node:fs";
 import path from "node:path";
+import type { APIRoute } from "astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog", ({ data }) => !data.draft);

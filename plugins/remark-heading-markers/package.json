@@ -5,7 +5,13 @@
 	"main": "index.ts",
 	"types": "index.ts",
 	"type": "module",
-	"keywords": ["remark", "remark-plugin", "markdown", "heading", "unified"],
+	"keywords": [
+		"remark",
+		"remark-plugin",
+		"markdown",
+		"heading",
+		"unified"
+	],
 	"scripts": {
 		"test": "vitest run",
 		"test:watch": "vitest"
