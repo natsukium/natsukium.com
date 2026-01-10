@@ -11,7 +11,6 @@
       url = "github:cachix/git-hooks.nix";
       inputs.flake-compat.follows = "";
       inputs.gitignore.follows = "";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     process-compose-flake.url = "github:platonic-systems/process-compose-flake";
