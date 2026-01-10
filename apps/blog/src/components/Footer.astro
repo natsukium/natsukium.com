@@ -18,7 +18,11 @@ const { noMarginTop = false } = Astro.props;
     <div class="copyright-wrapper">
       <span>Copyright &#169; {currentYear}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+      <span class="license-info">
+        Content: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+        /
+        Code: <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT</a>
+      </span>
     </div>
   </div>
 </footer>
@@ -41,5 +45,8 @@ const { noMarginTop = false } = Astro.props;
   }
   .separator {
     @apply hidden sm:inline;
+  }
+  .license-info a {
+    @apply hover:text-skin-accent;
   }
 </style>
