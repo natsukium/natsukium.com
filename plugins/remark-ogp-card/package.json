@@ -1,0 +1,28 @@
+{
+	"name": "remark-ogp-card",
+	"version": "1.0.0",
+	"description": "A remark plugin that converts standalone URLs to OGP cards using IMPIT",
+	"main": "index.ts",
+	"types": "index.ts",
+	"type": "module",
+	"scripts": {
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"peerDependencies": {
+		"unified": "^10.0.0 || ^11.0.0"
+	},
+	"dependencies": {
+		"impit": "^0.8.1",
+		"unist-util-visit": "^5.0.0"
+	},
+	"devDependencies": {
+		"@types/mdast": "^4.0.4",
+		"remark-parse": "^11.0.0",
+		"remark-stringify": "^11.0.0",
+		"unified": "^11.0.5",
+		"vitest": "^4.0.16"
+	},
+	"author": "natsukium",
+	"license": "MIT"
+}
