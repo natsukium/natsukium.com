@@ -10,6 +10,7 @@
 		"sync": "pnpm -C apps/blog sync",
 		"format:check": "pnpm -C apps/blog format:check",
 		"format": "pnpm -C apps/blog format",
-		"lint": "pnpm -C apps/blog lint"
+		"lint": "pnpm -C apps/blog lint",
+		"test": "pnpm -C apps/blog test"
 	}
 }
