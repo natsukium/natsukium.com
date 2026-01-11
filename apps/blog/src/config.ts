@@ -6,7 +6,7 @@ export const SITE: Site = {
 	profile: "https://natsukium.com",
 	desc: "natsukium's blog",
 	title: "substituter",
-	ogImage: "astropaper-og.jpg",
+	ogImage: "og.png",
 	lightAndDarkMode: true,
 	postPerIndex: 4,
 	postPerPage: 3,
