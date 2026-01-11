@@ -1,0 +1,54 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:best-practices",
+    "schedule:weekly",
+    ":automergeMinor",
+    ":automergePr",
+    "group:allNonMajor",
+  ],
+  labels: ["dependencies"],
+  prHourlyLimit: 0,
+  prConcurrentLimit: 0,
+  nix: {
+    enabled: true,
+  },
+  packageRules: [
+    {
+      description: "Automerge dev dependencies",
+      matchDepTypes: ["devDependencies"],
+      automerge: true,
+    },
+    {
+      description: "Group Astro packages",
+      matchPackagePatterns: ["^@?astro", "^@astrojs/"],
+      groupName: "astro",
+    },
+    {
+      description: "Group React packages",
+      matchPackageNames: ["react", "react-dom"],
+      matchPackagePatterns: ["^@types/react"],
+      groupName: "react",
+    },
+    {
+      description: "Group Tailwind packages",
+      matchPackagePatterns: ["tailwindcss", "^@tailwindcss/"],
+      groupName: "tailwindcss",
+    },
+    {
+      description: "Group TypeScript and linting tools",
+      matchPackagePatterns: ["typescript", "^@typescript-eslint/", "biome"],
+      groupName: "typescript-and-linting",
+    },
+    {
+      description: "Group Nix flake inputs",
+      matchManagers: ["nix"],
+      groupName: "nix",
+      automerge: true,
+    },
+  ],
+  lockFileMaintenance: {
+    enabled: true,
+    schedule: ["before 5am on monday"],
+  },
+}
