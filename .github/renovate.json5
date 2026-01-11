@@ -1,13 +1,15 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
-    "config:best-practices",
-    "schedule:weekly",
-    ":automergeMinor",
-    ":automergePr",
-    "group:allNonMajor",
+    'config:best-practices',
+    'schedule:weekly',
+    ':automergeMinor',
+    ':automergePr',
+    'group:allNonMajor',
   ],
-  labels: ["dependencies"],
+  labels: [
+    'dependencies',
+  ],
   prHourlyLimit: 0,
   prConcurrentLimit: 0,
   nix: {
@@ -15,40 +17,59 @@
   },
   packageRules: [
     {
-      description: "Automerge dev dependencies",
-      matchDepTypes: ["devDependencies"],
+      description: 'Automerge dev dependencies',
+      matchDepTypes: [
+        'devDependencies',
+      ],
       automerge: true,
     },
     {
-      description: "Group Astro packages",
-      matchPackagePatterns: ["^@?astro", "^@astrojs/"],
-      groupName: "astro",
+      description: 'Group Astro packages',
+      groupName: 'astro',
+      matchPackageNames: [
+        '/^@?astro/',
+        '/^@astrojs//',
+      ],
     },
     {
-      description: "Group React packages",
-      matchPackageNames: ["react", "react-dom"],
-      matchPackagePatterns: ["^@types/react"],
-      groupName: "react",
+      description: 'Group React packages',
+      matchPackageNames: [
+        'react',
+        'react-dom',
+        '/^@types/react/',
+      ],
+      groupName: 'react',
     },
     {
-      description: "Group Tailwind packages",
-      matchPackagePatterns: ["tailwindcss", "^@tailwindcss/"],
-      groupName: "tailwindcss",
+      description: 'Group Tailwind packages',
+      groupName: 'tailwindcss',
+      matchPackageNames: [
+        '/tailwindcss/',
+        '/^@tailwindcss//',
+      ],
     },
     {
-      description: "Group TypeScript and linting tools",
-      matchPackagePatterns: ["typescript", "^@typescript-eslint/", "biome"],
-      groupName: "typescript-and-linting",
+      description: 'Group TypeScript and linting tools',
+      groupName: 'typescript-and-linting',
+      matchPackageNames: [
+        '/typescript/',
+        '/^@typescript-eslint//',
+        '/biome/',
+      ],
     },
     {
-      description: "Group Nix flake inputs",
-      matchManagers: ["nix"],
-      groupName: "nix",
+      description: 'Group Nix flake inputs',
+      matchManagers: [
+        'nix',
+      ],
+      groupName: 'nix',
       automerge: true,
     },
   ],
   lockFileMaintenance: {
     enabled: true,
-    schedule: ["before 5am on monday"],
+    schedule: [
+      'before 5am on monday',
+    ],
   },
 }
