@@ -31,6 +31,9 @@ importers:
       remark-heading-markers:
         specifier: workspace:*
         version: link:../../plugins/remark-heading-markers
+      remark-ogp-card:
+        specifier: workspace:*
+        version: link:../../plugins/remark-ogp-card
       remark-toc:
         specifier: ^9.0.0
         version: 9.0.0

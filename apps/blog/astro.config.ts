@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkHeadingMarkers from "remark-heading-markers";
+import remarkOgpCard from "remark-ogp-card";
 import remarkToc from "remark-toc";
 import { SITE } from "./src/config";
 
@@ -27,6 +28,7 @@ export default defineConfig({
 				},
 			],
 			remarkHeadingMarkers,
+			[remarkOgpCard, { thumbnailPosition: "left" }],
 		],
 		shikiConfig: {
 			// For more themes, visit https://shiki.style/themes
