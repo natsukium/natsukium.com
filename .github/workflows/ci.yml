@@ -25,5 +25,7 @@ jobs:
         run: nix flake check
       - name: "Install dependencies"
         run: nix develop --command bash -c "pnpm install --frozen-lockfile"
+      - name: "Run tests"
+        run: nix develop --command bash -c "pnpm run test"
       - name: "Build the project"
         run: nix develop --command bash -c "pnpm run build"
