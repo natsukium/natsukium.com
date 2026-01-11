@@ -60,6 +60,7 @@ module.exports = {
 				},
 			},
 			fontFamily: {
+				sans: ["IBM Plex Sans JP", "sans-serif"],
 				mono: ["IBM Plex Mono", "monospace"],
 			},
 

@@ -29,7 +29,7 @@
 		display: block;
 	}
 	body {
-		@apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
+		@apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
 	}
 	section,
 	footer {
@@ -96,6 +96,10 @@
 	/* ===== Code Blocks & Syntax Highlighting ===== */
 	pre:has(code) {
 		@apply border border-skin-line;
+	}
+	pre,
+	code {
+		@apply font-mono;
 	}
 	code,
 	blockquote {
