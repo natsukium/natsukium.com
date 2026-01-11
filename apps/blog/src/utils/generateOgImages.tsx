@@ -14,7 +14,12 @@ export async function generateOgImageForPost(post: CollectionEntry<"blog">) {
 	return svgBufferToPngBuffer(svg);
 }
 
-export async function generateOgImageForSite() {
-	const svg = await siteOgImage();
+export type SiteOgOptions = {
+	postCount: number;
+	topTags: string[];
+};
+
+export async function generateOgImageForSite(options: SiteOgOptions) {
+	const svg = await siteOgImage(options);
 	return svgBufferToPngBuffer(svg);
 }

@@ -1,96 +1,113 @@
 import { SITE } from "@config";
 import satori from "satori";
+import type { SiteOgOptions } from "../generateOgImages";
 import loadGoogleFonts, { type FontOptions } from "../loadGoogleFont";
+import {
+	DocumentIcon,
+	MetadataItem,
+	ProfileSection,
+	TagIcon,
+	UserIcon,
+} from "./components";
 
-export default async () => {
+export default async ({ postCount, topTags }: SiteOgOptions) => {
+	const tagsText = topTags
+		.slice(0, 3)
+		.map((tag) => `#${tag}`)
+		.join("  ");
 	return satori(
 		<div
 			style={{
-				background: "#fefbfb",
+				background: "#ffffff",
 				width: "100%",
 				height: "100%",
 				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
+				padding: "72px",
 			}}
 		>
 			<div
 				style={{
-					position: "absolute",
-					top: "-1px",
-					right: "-1px",
-					border: "4px solid #000",
-					background: "#ecebeb",
-					opacity: "0.9",
-					borderRadius: "4px",
 					display: "flex",
-					justifyContent: "center",
-					margin: "2.5rem",
-					width: "88%",
-					height: "80%",
-				}}
-			/>
-
-			<div
-				style={{
-					border: "4px solid #000",
-					background: "#fefbfb",
-					borderRadius: "4px",
-					display: "flex",
-					justifyContent: "center",
-					margin: "2rem",
-					width: "88%",
-					height: "80%",
+					flexDirection: "column",
+					justifyContent: "space-between",
+					flex: 1,
+					height: "100%",
 				}}
 			>
 				<div
 					style={{
 						display: "flex",
 						flexDirection: "column",
-						justifyContent: "space-between",
-						margin: "20px",
-						width: "90%",
-						height: "90%",
 					}}
 				>
 					<div
 						style={{
 							display: "flex",
 							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							height: "90%",
-							maxHeight: "90%",
-							overflow: "hidden",
-							textAlign: "center",
+							height: "230px",
 						}}
 					>
-						<p style={{ fontSize: 72, fontWeight: "bold" }}>{SITE.title}</p>
-						<p style={{ fontSize: 28 }}>{SITE.desc}</p>
+						<p
+							style={{
+								fontSize: 40,
+								color: "#656d76",
+								marginBottom: "4px",
+							}}
+						>
+							{SITE.author}/
+						</p>
+						<p
+							style={{
+								fontSize: 48,
+								fontWeight: "bold",
+								color: "#1f2328",
+								lineHeight: 1.3,
+								overflow: "hidden",
+							}}
+						>
+							{SITE.title}
+						</p>
 					</div>
 
-					<div
+					<p
 						style={{
-							display: "flex",
-							justifyContent: "flex-end",
-							width: "100%",
-							marginBottom: "8px",
-							fontSize: 28,
+							fontSize: 24,
+							color: "#656d76",
+							marginTop: "16px",
+							lineHeight: 1.6,
+							maxHeight: "120px",
+							overflow: "hidden",
 						}}
 					>
-						<span style={{ overflow: "hidden", fontWeight: "bold" }}>
-							{new URL(SITE.website).hostname}
-						</span>
-					</div>
+						{SITE.desc}
+					</p>
+				</div>
+
+				<div
+					style={{
+						display: "flex",
+						alignItems: "center",
+						fontSize: 20,
+						color: "#656d76",
+						gap: "24px",
+					}}
+				>
+					<MetadataItem icon={<UserIcon />} text={SITE.author} />
+					<MetadataItem icon={<DocumentIcon />} text={`${postCount} posts`} />
+					{topTags.length > 0 && (
+						<MetadataItem icon={<TagIcon />} text={tagsText} />
+					)}
 				</div>
 			</div>
+
+			<ProfileSection />
 		</div>,
 		{
 			width: 1200,
 			height: 630,
 			embedFont: true,
 			fonts: (await loadGoogleFonts(
-				SITE.title + SITE.desc + SITE.website,
+				`${SITE.author}/${SITE.title}${SITE.desc}${postCount} posts${tagsText}#${new URL(SITE.website).hostname}`,
 			)) as FontOptions[],
 		},
 	);
