@@ -19,7 +19,7 @@
 		"@astrojs/rss": "^4.0.7",
 		"@donovanglover/base16-tailwind": "npm:@jsr/donovanglover__base16-tailwind@^1.0.0",
 		"@resvg/resvg-js": "^2.6.2",
-		"astro": "^4.16.3",
+		"astro": "^5.0.0",
 		"fuse.js": "^7.0.0",
 		"remark-collapse": "^0.1.2",
 		"remark-heading-markers": "workspace:*",
@@ -32,9 +32,9 @@
 		"yaml": "^2.8.2"
 	},
 	"devDependencies": {
-		"@astrojs/react": "3.6.3",
+		"@astrojs/react": "4.4.2",
 		"@astrojs/sitemap": "3.6.0",
-		"@astrojs/tailwind": "5.1.5",
+		"@astrojs/tailwind": "6.0.2",
 		"@tailwindcss/typography": "0.5.19",
 		"@types/github-slugger": "2.0.0",
 		"@types/react": "19.2.7",
