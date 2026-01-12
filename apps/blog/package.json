@@ -17,6 +17,7 @@
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
 		"@astrojs/rss": "^4.0.7",
+		"@donovanglover/base16-tailwind": "npm:@jsr/donovanglover__base16-tailwind@^1.0.0",
 		"@resvg/resvg-js": "^2.6.2",
 		"astro": "^4.16.3",
 		"fuse.js": "^7.0.0",
