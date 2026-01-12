@@ -7,7 +7,7 @@ export const SITE: Site = {
 	desc: "natsukium's blog",
 	title: "substituter",
 	ogImage: "og.png",
-	lightAndDarkMode: true,
+	defaultTheme: "base16-nord",
 	postPerIndex: 4,
 	postPerPage: 3,
 	scheduledPostMargin: 15 * 60 * 1000, // 15 minutes

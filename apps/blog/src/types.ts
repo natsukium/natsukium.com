@@ -7,7 +7,8 @@ export type Site = {
 	desc: string;
 	title: string;
 	ogImage?: string;
-	lightAndDarkMode: boolean;
+	/** Default base16 theme slug (e.g., "base16-nord") */
+	defaultTheme: string;
 	postPerIndex: number;
 	postPerPage: number;
 	scheduledPostMargin: number;
@@ -17,6 +18,13 @@ export type Site = {
 		text?: string;
 		appendFilePath?: boolean;
 	};
+};
+
+export type Theme = {
+	name: string;
+	slug: string;
+	variant: "dark" | "light";
+	colors: string[];
 };
 
 export type SocialObjects = {

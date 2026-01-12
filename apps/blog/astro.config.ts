@@ -6,7 +6,14 @@ import remarkCollapse from "remark-collapse";
 import remarkHeadingMarkers from "remark-heading-markers";
 import remarkOgpCard from "remark-ogp-card";
 import remarkToc from "remark-toc";
+import { createCssVariablesTheme } from "shiki/core";
 import { SITE } from "./src/config";
+
+const base16ShikiTheme = createCssVariablesTheme({
+	name: "base16-css-vars",
+	variablePrefix: "--shiki-",
+	fontStyle: true,
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,8 +38,7 @@ export default defineConfig({
 			[remarkOgpCard, { thumbnailPosition: "left" }],
 		],
 		shikiConfig: {
-			// For more themes, visit https://shiki.style/themes
-			themes: { light: "min-light", dark: "night-owl" },
+			theme: base16ShikiTheme,
 			wrap: true,
 		},
 	},
