@@ -141,7 +141,7 @@ const nextPost =
             </svg>
             <div>
               <span>Previous Post</span>
-              <div class="text-sm text-skin-accent/85">{prevPost.title}</div>
+              <div class="text-sm text-blue/85">{prevPost.title}</div>
             </div>
           </a>
         )
@@ -154,7 +154,7 @@ const nextPost =
           >
             <div>
               <span>Next Post</span>
-              <div class="text-sm text-skin-accent/85">{nextPost.title}</div>
+              <div class="text-sm text-blue/85">{nextPost.title}</div>
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +186,7 @@ const nextPost =
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
-    @apply text-2xl font-semibold text-skin-accent;
+    @apply text-2xl font-semibold text-blue;
   }
 </style>
 
@@ -197,11 +197,11 @@ const nextPost =
     // Create the main container div
     const progressContainer = document.createElement("div");
     progressContainer.className =
-      "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill";
+      "progress-container fixed top-0 z-10 h-1 w-full bg-100";
 
     // Create the progress bar div
     const progressBar = document.createElement("div");
-    progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
+    progressBar.className = "progress-bar h-1 w-0 bg-blue";
     progressBar.id = "myBar";
 
     // Append the progress bar to the progress container
@@ -266,7 +266,7 @@ const nextPost =
 
       const copyButton = document.createElement("button");
       copyButton.className =
-        "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
+        "copy-code absolute right-3 -top-3 rounded bg-200 px-2 py-1 text-xs leading-4 text-600 font-medium";
       copyButton.innerHTML = copyButtonLabel;
       codeBlock.setAttribute("tabindex", "0");
       codeBlock.appendChild(copyButton);
