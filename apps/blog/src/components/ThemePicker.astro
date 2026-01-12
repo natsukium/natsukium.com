@@ -1,0 +1,104 @@
+---
+// Read YAML scheme files directly to avoid tailwindcss/plugin resolution issue
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
+import { parse } from "yaml";
+import type { Theme } from "../types";
+// biome-ignore lint/correctness/noUnusedImports: Used in Astro template below
+import ThemePickerClient from "./ThemePickerClient";
+
+interface SchemeYaml {
+	system: string;
+	name: string;
+	author: string;
+	variant: "dark" | "light";
+	palette: Record<string, string>;
+}
+
+// Get the path to scheme files using createRequire for ESM compatibility.
+// require.resolve("@donovanglover/base16-tailwind") returns the path to the
+// package's main entry point (src/lib.js). We navigate up two directories
+// (src/lib.js -> src -> package root) to access the schemes directory.
+// This assumes the package structure: package-root/src/lib.js and package-root/schemes/base16/
+const require = createRequire(import.meta.url);
+const libPath = require.resolve("@donovanglover/base16-tailwind");
+const packageRoot = dirname(dirname(libPath));
+const schemesPath = join(packageRoot, "schemes/base16");
+
+function parseHexColor(hex: string): string | null {
+	if (typeof hex !== "string" || !/^#[0-9a-fA-F]{6}$/.test(hex)) {
+		return null;
+	}
+	const r = parseInt(hex.slice(1, 3), 16);
+	const g = parseInt(hex.slice(3, 5), 16);
+	const b = parseInt(hex.slice(5, 7), 16);
+	return `rgb(${r}, ${g}, ${b})`;
+}
+
+// Read all YAML scheme files with error handling
+let schemeFiles: string[] = [];
+if (existsSync(schemesPath)) {
+	schemeFiles = readdirSync(schemesPath).filter((f) => f.endsWith(".yaml"));
+} else {
+	console.error(`Schemes directory not found: ${schemesPath}`);
+}
+
+const BASE_KEYS = [
+	"base00",
+	"base01",
+	"base02",
+	"base03",
+	"base04",
+	"base05",
+	"base06",
+	"base07",
+	"base08",
+	"base09",
+	"base0A",
+	"base0B",
+	"base0C",
+	"base0D",
+	"base0E",
+	"base0F",
+] as const;
+
+// biome-ignore lint/correctness/noUnusedVariables: Used in Astro template below
+const themes: Theme[] = schemeFiles
+	.map((filename): Theme | null => {
+		try {
+			const content = readFileSync(join(schemesPath, filename), "utf-8");
+			const scheme = parse(content) as SchemeYaml;
+
+			if (!scheme.name || !scheme.palette || !scheme.variant) {
+				console.error(`Invalid scheme file: ${filename}`);
+				return null;
+			}
+
+			const slug = `base16-${filename.replace(".yaml", "")}`;
+
+			const colors = BASE_KEYS.map((key) => {
+				const hex = scheme.palette[key];
+				const rgb = parseHexColor(hex);
+				if (!rgb) {
+					console.error(`Invalid color ${key} in ${filename}: ${hex}`);
+					return "rgb(0, 0, 0)";
+				}
+				return rgb;
+			});
+
+			return {
+				name: scheme.name,
+				slug,
+				variant: scheme.variant,
+				colors,
+			};
+		} catch (error) {
+			console.error(`Failed to parse scheme file: ${filename}`, error);
+			return null;
+		}
+	})
+	.filter((theme): theme is Theme => theme !== null);
+---
+
+<ThemePickerClient themes={themes} client:idle />
