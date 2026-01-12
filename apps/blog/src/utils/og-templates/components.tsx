@@ -1,4 +1,5 @@
 import { SITE } from "@config";
+import type { JSX } from "react";
 
 const ICON_STYLE = {
 	xmlns: "http://www.w3.org/2000/svg",
