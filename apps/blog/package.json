@@ -34,7 +34,7 @@
 		"@tailwindcss/typography": "0.5.19",
 		"@types/github-slugger": "^2.0.0",
 		"@types/react": "18.3.27",
-		"@typescript-eslint/parser": "8.46.2",
+		"@typescript-eslint/parser": "8.52.0",
 		"globals": "^17.0.0",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
