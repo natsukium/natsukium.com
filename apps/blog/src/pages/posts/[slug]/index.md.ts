@@ -7,7 +7,7 @@ export async function getStaticPaths() {
 	const posts = await getCollection("blog", ({ data }) => !data.draft);
 
 	return posts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: { post },
 	}));
 }
@@ -27,7 +27,7 @@ export const GET: APIRoute = async ({ props }) => {
 		});
 	} catch (error) {
 		return new Response(
-			`Markdown file not found\npost.id: ${post.id}\npost.slug: ${post.slug}\nAttempted path: ${filePath}`,
+			`Markdown file not found\npost.id: ${post.id}\nAttempted path: ${filePath}`,
 			{
 				status: 404,
 				headers: {
