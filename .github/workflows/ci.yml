@@ -4,28 +4,117 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, synchronize, reopened, closed]
   push:
     branches:
       - main
 
 jobs:
   build:
-    name: Code standards & build
+    name: Build
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 10
+    if: github.event.action != 'closed'
 
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-      - uses: cachix/install-nix-action@4e002c8ec80594ecd40e759629461e26c8abed15 # v31
-      - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
-        with:
-          name: natsukium
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-      - name: "Lint and format"
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: ./.github/actions/setup-nix
+      - name: Lint and format
         run: nix flake check
-      - name: "Install dependencies"
-        run: nix develop --command bash -c "pnpm install --frozen-lockfile"
-      - name: "Run tests"
-        run: nix develop --command bash -c "pnpm run test"
-      - name: "Build the project"
-        run: nix develop --command bash -c "pnpm run build"
+      - name: Install dependencies
+        run: nix profile install .#ci && pnpm install --frozen-lockfile
+      - name: Run tests
+        run: pnpm run test
+      - name: Build the project
+        run: pnpm run build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: build-output
+          path: |
+            apps/blog/dist
+          retention-days: 1
+
+  deploy:
+    name: Deploy to Cloudflare Workers
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.event.action != 'closed'
+    permissions:
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Download build artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: build-output
+
+      - uses: ./.github/actions/setup-nix
+      - name: Install dependencies
+        run: nix profile install .#ci
+
+      - name: Deploy to Production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --env prod
+
+      - name: Deploy Preview
+        id: preview
+        if: github.event_name == 'pull_request'
+        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --name natsukium-com-preview-${{ github.event.number }}
+
+      - name: Comment Preview URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const previewUrl = '${{ steps.preview.outputs.deployment-url }}';
+            const body = `## Preview Deployment\n\nPreview URL: ${previewUrl}`;
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes('Preview Deployment')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+  cleanup:
+    name: Cleanup Preview Worker
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+
+    steps:
+      - uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: delete --name natsukium-com-preview-${{ github.event.number }} --force
