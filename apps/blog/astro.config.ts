@@ -16,8 +16,9 @@ const base16ShikiTheme = createCssVariablesTheme({
 });
 
 // https://astro.build/config
+// Use SITE_URL env var for preview deployments, fallback to production URL
 export default defineConfig({
-	site: SITE.website,
+	site: process.env.SITE_URL || SITE.website,
 	integrations: [
 		tailwind({
 			applyBaseStyles: false,

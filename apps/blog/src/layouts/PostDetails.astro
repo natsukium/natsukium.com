@@ -7,6 +7,7 @@ import ShareLinks from "@components/ShareLinks.astro";
 import Tag from "@components/Tag.astro";
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
+import { getOgImageUrl } from "@utils/ogImage";
 import { slugifyStr } from "@utils/slugify";
 
 export interface Props {
@@ -30,11 +31,11 @@ const {
 
 const { Content } = await render(post);
 
-const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
-const ogUrl = new URL(
-	ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
-	Astro.url.origin,
-).href;
+const ogUrl = getOgImageUrl({
+	ogImage,
+	title,
+	origin: Astro.url.origin,
+});
 
 const layoutProps = {
 	title: `${title} | ${SITE.title}`,
