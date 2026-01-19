@@ -24,27 +24,31 @@ describe("getOgImageUrl", () => {
 		expect(result).toBe("https://natsukium.com/images/custom.png");
 	});
 
-	it("falls back to slugified title when ogImage is null", () => {
+	it("falls back to slugified title with index.png when ogImage is null", () => {
 		const result = getOgImageUrl({
 			ogImage: null,
 			title: "My Awesome Post",
 			origin,
 		});
 
-		expect(result).toBe("https://natsukium.com/posts/my-awesome-post.png");
+		expect(result).toBe(
+			"https://natsukium.com/posts/my-awesome-post/index.png",
+		);
 	});
 
-	it("falls back to slugified title when ogImage is undefined", () => {
+	it("falls back to slugified title with index.png when ogImage is undefined", () => {
 		const result = getOgImageUrl({
 			ogImage: undefined,
 			title: "Another Post Title",
 			origin,
 		});
 
-		expect(result).toBe("https://natsukium.com/posts/another-post-title.png");
+		expect(result).toBe(
+			"https://natsukium.com/posts/another-post-title/index.png",
+		);
 	});
 
-	it("handles Japanese title correctly", () => {
+	it("handles Japanese title correctly with index.png", () => {
 		const result = getOgImageUrl({
 			ogImage: undefined,
 			title: "Nixと文芸的プログラミング",
@@ -53,7 +57,7 @@ describe("getOgImageUrl", () => {
 
 		// URL encoding is applied to non-ASCII characters
 		expect(result).toBe(
-			`https://natsukium.com/posts/${encodeURIComponent("nixと文芸的プログラミング")}.png`,
+			`https://natsukium.com/posts/${encodeURIComponent("nixと文芸的プログラミング")}/index.png`,
 		);
 	});
 
