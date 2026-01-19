@@ -87,8 +87,8 @@ importers:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
       vitest:
-        specifier: 4.0.16
-        version: 4.0.16(jiti@1.21.7)(yaml@2.8.2)
+        specifier: 4.0.17
+        version: 4.0.17(jiti@1.21.7)(yaml@2.8.2)
 
   plugins/remark-heading-markers:
     devDependencies:
@@ -105,14 +105,14 @@ importers:
         specifier: 11.0.5
         version: 11.0.5
       vitest:
-        specifier: 4.0.16
-        version: 4.0.16(jiti@1.21.7)(yaml@2.8.2)
+        specifier: 4.0.17
+        version: 4.0.17(jiti@1.21.7)(yaml@2.8.2)
 
   plugins/remark-ogp-card:
     dependencies:
       impit:
         specifier: ^0.8.1
-        version: 0.8.1
+        version: 0.8.2
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
@@ -130,8 +130,8 @@ importers:
         specifier: 11.0.5
         version: 11.0.5
       vitest:
-        specifier: 4.0.16
-        version: 4.0.16(jiti@1.21.7)(yaml@2.8.2)
+        specifier: 4.0.17
+        version: 4.0.17(jiti@1.21.7)(yaml@2.8.2)
 
 packages:
 
@@ -1210,11 +1210,11 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
 
-  '@vitest/expect@4.0.16':
-    resolution: {integrity: sha512-eshqULT2It7McaJkQGLkPjPjNph+uevROGuIMJdG3V+0BSR2w9u6J9Lwu+E8cK5TETlfou8GRijhafIMhXsimA==}
+  '@vitest/expect@4.0.17':
+    resolution: {integrity: sha512-mEoqP3RqhKlbmUmntNDDCJeTDavDR+fVYkSOw8qRwJFaW/0/5zA9zFeTrHqNtcmwh6j26yMmwx2PqUDPzt5ZAQ==}
 
-  '@vitest/mocker@4.0.16':
-    resolution: {integrity: sha512-yb6k4AZxJTB+q9ycAvsoxGn+j/po0UaPgajllBgt1PzoMAAmJGYFdDk0uCcRcxb3BrME34I6u8gHZTQlkqSZpg==}
+  '@vitest/mocker@4.0.17':
+    resolution: {integrity: sha512-+ZtQhLA3lDh1tI2wxe3yMsGzbp7uuJSWBM1iTIKCbppWTSBN09PUC+L+fyNlQApQoR+Ps8twt2pbSSXg2fQVEQ==}
     peerDependencies:
       msw: ^2.4.9
       vite: ^6.0.0 || ^7.0.0-0
@@ -1224,20 +1224,20 @@ packages:
       vite:
         optional: true
 
-  '@vitest/pretty-format@4.0.16':
-    resolution: {integrity: sha512-eNCYNsSty9xJKi/UdVD8Ou16alu7AYiS2fCPRs0b1OdhJiV89buAXQLpTbe+X8V9L6qrs9CqyvU7OaAopJYPsA==}
+  '@vitest/pretty-format@4.0.17':
+    resolution: {integrity: sha512-Ah3VAYmjcEdHg6+MwFE17qyLqBHZ+ni2ScKCiW2XrlSBV4H3Z7vYfPfz7CWQ33gyu76oc0Ai36+kgLU3rfF4nw==}
 
-  '@vitest/runner@4.0.16':
-    resolution: {integrity: sha512-VWEDm5Wv9xEo80ctjORcTQRJ539EGPB3Pb9ApvVRAY1U/WkHXmmYISqU5E79uCwcW7xYUV38gwZD+RV755fu3Q==}
+  '@vitest/runner@4.0.17':
+    resolution: {integrity: sha512-JmuQyf8aMWoo/LmNFppdpkfRVHJcsgzkbCA+/Bk7VfNH7RE6Ut2qxegeyx2j3ojtJtKIbIGy3h+KxGfYfk28YQ==}
 
-  '@vitest/snapshot@4.0.16':
-    resolution: {integrity: sha512-sf6NcrYhYBsSYefxnry+DR8n3UV4xWZwWxYbCJUt2YdvtqzSPR7VfGrY0zsv090DAbjFZsi7ZaMi1KnSRyK1XA==}
+  '@vitest/snapshot@4.0.17':
+    resolution: {integrity: sha512-npPelD7oyL+YQM2gbIYvlavlMVWUfNNGZPcu0aEUQXt7FXTuqhmgiYupPnAanhKvyP6Srs2pIbWo30K0RbDtRQ==}
 
-  '@vitest/spy@4.0.16':
-    resolution: {integrity: sha512-4jIOWjKP0ZUaEmJm00E0cOBLU+5WE0BpeNr3XN6TEF05ltro6NJqHWxXD0kA8/Zc8Nh23AT8WQxwNG+WeROupw==}
+  '@vitest/spy@4.0.17':
+    resolution: {integrity: sha512-I1bQo8QaP6tZlTomQNWKJE6ym4SHf3oLS7ceNjozxxgzavRAgZDc06T7kD8gb9bXKEgcLNt00Z+kZO6KaJ62Ew==}
 
-  '@vitest/utils@4.0.16':
-    resolution: {integrity: sha512-h8z9yYhV3e1LEfaQ3zdypIrnAg/9hguReGZoS7Gl0aBG5xgA410zBqECqmaF/+RkTggRsfnzc1XaAHA6bmUufA==}
+  '@vitest/utils@4.0.17':
+    resolution: {integrity: sha512-RG6iy+IzQpa9SB8HAFHJ9Y+pTzI+h8553MrciN9eC6TFBErqrQaTas4vG+MVj8S4uKk8uTT2p0vgZPnTdxd96w==}
 
   '@volar/kit@2.4.27':
     resolution: {integrity: sha512-ilZoQDMLzqmSsImJRWx4YiZ4FcvvPrPnFVmL6hSsIWB6Bn3qc7k88J9yP32dagrs5Y8EXIlvvD/mAFaiuEOACQ==}
@@ -1904,56 +1904,56 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  impit-darwin-arm64@0.8.1:
-    resolution: {integrity: sha512-5pxQaZ7tYKBmoja2mhKhRDjudWYFPAofFuOcFeDcmKLldlvrNXz0buYEiaIIMhdYXdZ8KPPrgSTB+i7BI1UFzw==}
+  impit-darwin-arm64@0.8.2:
+    resolution: {integrity: sha512-xFKLJxyGatPEz49ZUT3f2wRgKAhavWT1w5Cth27csY/Y0Rm7f6IjkjBbXk2/azsqYXNJDgNdAqWq9+/oFFm+IQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  impit-darwin-x64@0.8.1:
-    resolution: {integrity: sha512-rQx/WSaqnwZcOPKoy3e39Hhrvn9JD6hVHcVTYpXU7q3CWgNcRLlMcrNPIEzSlungOL5mH7kzMh3B4XTMwxdwZg==}
+  impit-darwin-x64@0.8.2:
+    resolution: {integrity: sha512-OxkbXWNvl9XcygxDUV+1sTyOYuHeORwCky9Nt/KMRlu+hOhiU2a3ZsS2zlAqYxh77Yfd5VWFJaG+mXpp3Zx8dw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  impit-linux-arm64-gnu@0.8.1:
-    resolution: {integrity: sha512-NYRCKwVxYs+VhrMZsYWCRnjkYOsq5i5iTxDK5b0m6z/PHfHJxJqo5lkP3P4ofbYHSFB7+r+0a8VBuCybcPXDqA==}
+  impit-linux-arm64-gnu@0.8.2:
+    resolution: {integrity: sha512-Yygo2Vfyz4+ClXivVxjcuXuffnVnoRg23Wf7MMd0tiLnbxnn+VBPBsj0/kl5GKslacoWvyFz5n997H2NawPe0Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  impit-linux-arm64-musl@0.8.1:
-    resolution: {integrity: sha512-KwNAuh0Vcmr6bhCG/xeI6qQGiVU8AxVRAduecgoC8st8l3hXjyQnwTmMwg41/k4C25M/0HICqe5Al22/t9dEpQ==}
+  impit-linux-arm64-musl@0.8.2:
+    resolution: {integrity: sha512-TB/ux8K7/BVLZlovOE6dDtS2NKgKMjkt75DmbWo2eQnEOF2aJdcKCqsxx4FolZezY1zWcpTOUM+ES+EKI/G9eQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  impit-linux-x64-gnu@0.8.1:
-    resolution: {integrity: sha512-QuZcNlfm74h0DSxr9/9ycgqXPXpJHovmTwAEd925jBJ5MYAEJphNhri4Yu6Dj6EwGD4Y+3gfm8yB2awmfELCsg==}
+  impit-linux-x64-gnu@0.8.2:
+    resolution: {integrity: sha512-5wVgeMai+chGsb/7KL4W8lCuyf/HcYXLR1pBzevls3/jNUQ5IoyP/XAtUe0GN2H+zCFj7UVD6VFKlbOBFp2a/A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  impit-linux-x64-musl@0.8.1:
-    resolution: {integrity: sha512-8hrPB71RzfXqG9IVytWBbaeb6HLzr96QhKVZvMk8F98LiPYF3u+nSrn3+7r9UVTw2IWQSe7O5Mgd29nsBb34vg==}
+  impit-linux-x64-musl@0.8.2:
+    resolution: {integrity: sha512-7QN6DzhH2BlQEj/KTuxBJKFTO1aDsHaDngmJw9V5k8pOFS1s1U3EfnosVTFocgQIcuEk9viutEEEUfUnehnrng==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  impit-win32-arm64-msvc@0.8.1:
-    resolution: {integrity: sha512-Aq9ZO5iHt9BM3Y4FTvwCABmj8nlOiSv1bX0xQ7imm2RR9Kbo6ugeBVi14mm9sfkh7KgnBCyl30wBendTg+ltrA==}
+  impit-win32-arm64-msvc@0.8.2:
+    resolution: {integrity: sha512-KvsKB6mfCM+DAvC5wLhRwOSXdy3fN7JLub1ieazFK2POOqLN27XUc5DbmniAW9jcCew9VMjw3ipZeFvfHEFHFg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  impit-win32-x64-msvc@0.8.1:
-    resolution: {integrity: sha512-WSCXefiNGzagJfN7S03iwk/LFwvQymDGV/44s1WzvZ6jfR43/rJ2rWdTOOnX4POtd+NNU/l1taGNv1swhoNfrQ==}
+  impit-win32-x64-msvc@0.8.2:
+    resolution: {integrity: sha512-QidL5Hgjx6l8OepoqT+X0EvP65Z636kLf4tKqd21rM/JBNLPP1jnfjr91XjLlHTS/0lawkjAPUzcpMI9LInUyQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  impit@0.8.1:
-    resolution: {integrity: sha512-PfhN3uPGT/4v6NUAjv1TE8P19NS0R7ymebj7/W8qmh604i0Dwyj18lQG/fa19K+8VCUja2BOyjL2z8HlUt3wbw==}
+  impit@0.8.2:
+    resolution: {integrity: sha512-EVC+R3GrbOjAgYW0e/ShH1FHXFJT5wFRhDnDtmLrzA68FPNsE8wsw6ZsJVW6OxVzKI1ukZ0FM5WrsQ6HK9VR5A==}
     engines: {node: '>= 20'}
 
   import-fresh@3.3.1:
@@ -3052,18 +3052,18 @@ packages:
       vite:
         optional: true
 
-  vitest@4.0.16:
-    resolution: {integrity: sha512-E4t7DJ9pESL6E3I8nFjPa4xGUd3PmiWDLsDztS2qXSJWfHtbQnwAWylaBvSNY48I3vr8PTqIZlyK8TE3V3CA4Q==}
+  vitest@4.0.17:
+    resolution: {integrity: sha512-FQMeF0DJdWY0iOnbv466n/0BudNdKj1l5jYgl5JVTwjSsZSlqyXFt/9+1sEyhR6CLowbZpV7O1sCHrzBhucKKg==}
     engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@opentelemetry/api': ^1.9.0
       '@types/node': ^20.0.0 || ^22.0.0 || >=24.0.0
-      '@vitest/browser-playwright': 4.0.16
-      '@vitest/browser-preview': 4.0.16
-      '@vitest/browser-webdriverio': 4.0.16
-      '@vitest/ui': 4.0.16
+      '@vitest/browser-playwright': 4.0.17
+      '@vitest/browser-preview': 4.0.17
+      '@vitest/browser-webdriverio': 4.0.17
+      '@vitest/ui': 4.0.17
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -4245,43 +4245,43 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/expect@4.0.16':
+  '@vitest/expect@4.0.17':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@types/chai': 5.2.3
-      '@vitest/spy': 4.0.16
-      '@vitest/utils': 4.0.16
+      '@vitest/spy': 4.0.17
+      '@vitest/utils': 4.0.17
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.16(vite@7.3.1(jiti@1.21.7)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.17(vite@7.3.1(jiti@1.21.7)(yaml@2.8.2))':
     dependencies:
-      '@vitest/spy': 4.0.16
+      '@vitest/spy': 4.0.17
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
       vite: 7.3.1(jiti@1.21.7)(yaml@2.8.2)
 
-  '@vitest/pretty-format@4.0.16':
+  '@vitest/pretty-format@4.0.17':
     dependencies:
       tinyrainbow: 3.0.3
 
-  '@vitest/runner@4.0.16':
+  '@vitest/runner@4.0.17':
     dependencies:
-      '@vitest/utils': 4.0.16
+      '@vitest/utils': 4.0.17
       pathe: 2.0.3
 
-  '@vitest/snapshot@4.0.16':
+  '@vitest/snapshot@4.0.17':
     dependencies:
-      '@vitest/pretty-format': 4.0.16
+      '@vitest/pretty-format': 4.0.17
       magic-string: 0.30.21
       pathe: 2.0.3
 
-  '@vitest/spy@4.0.16': {}
+  '@vitest/spy@4.0.17': {}
 
-  '@vitest/utils@4.0.16':
+  '@vitest/utils@4.0.17':
     dependencies:
-      '@vitest/pretty-format': 4.0.16
+      '@vitest/pretty-format': 4.0.17
       tinyrainbow: 3.0.3
 
   '@volar/kit@2.4.27(typescript@5.9.3)':
@@ -5121,40 +5121,40 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  impit-darwin-arm64@0.8.1:
+  impit-darwin-arm64@0.8.2:
     optional: true
 
-  impit-darwin-x64@0.8.1:
+  impit-darwin-x64@0.8.2:
     optional: true
 
-  impit-linux-arm64-gnu@0.8.1:
+  impit-linux-arm64-gnu@0.8.2:
     optional: true
 
-  impit-linux-arm64-musl@0.8.1:
+  impit-linux-arm64-musl@0.8.2:
     optional: true
 
-  impit-linux-x64-gnu@0.8.1:
+  impit-linux-x64-gnu@0.8.2:
     optional: true
 
-  impit-linux-x64-musl@0.8.1:
+  impit-linux-x64-musl@0.8.2:
     optional: true
 
-  impit-win32-arm64-msvc@0.8.1:
+  impit-win32-arm64-msvc@0.8.2:
     optional: true
 
-  impit-win32-x64-msvc@0.8.1:
+  impit-win32-x64-msvc@0.8.2:
     optional: true
 
-  impit@0.8.1:
+  impit@0.8.2:
     optionalDependencies:
-      impit-darwin-arm64: 0.8.1
-      impit-darwin-x64: 0.8.1
-      impit-linux-arm64-gnu: 0.8.1
-      impit-linux-arm64-musl: 0.8.1
-      impit-linux-x64-gnu: 0.8.1
-      impit-linux-x64-musl: 0.8.1
-      impit-win32-arm64-msvc: 0.8.1
-      impit-win32-x64-msvc: 0.8.1
+      impit-darwin-arm64: 0.8.2
+      impit-darwin-x64: 0.8.2
+      impit-linux-arm64-gnu: 0.8.2
+      impit-linux-arm64-musl: 0.8.2
+      impit-linux-x64-gnu: 0.8.2
+      impit-linux-x64-musl: 0.8.2
+      impit-win32-arm64-msvc: 0.8.2
+      impit-win32-x64-msvc: 0.8.2
 
   import-fresh@3.3.1:
     dependencies:
@@ -6400,15 +6400,15 @@ snapshots:
     optionalDependencies:
       vite: 6.4.1(jiti@1.21.7)(yaml@2.8.2)
 
-  vitest@4.0.16(jiti@1.21.7)(yaml@2.8.2):
+  vitest@4.0.17(jiti@1.21.7)(yaml@2.8.2):
     dependencies:
-      '@vitest/expect': 4.0.16
-      '@vitest/mocker': 4.0.16(vite@7.3.1(jiti@1.21.7)(yaml@2.8.2))
-      '@vitest/pretty-format': 4.0.16
-      '@vitest/runner': 4.0.16
-      '@vitest/snapshot': 4.0.16
-      '@vitest/spy': 4.0.16
-      '@vitest/utils': 4.0.16
+      '@vitest/expect': 4.0.17
+      '@vitest/mocker': 4.0.17(vite@7.3.1(jiti@1.21.7)(yaml@2.8.2))
+      '@vitest/pretty-format': 4.0.17
+      '@vitest/runner': 4.0.17
+      '@vitest/snapshot': 4.0.17
+      '@vitest/spy': 4.0.17
+      '@vitest/utils': 4.0.17
       es-module-lexer: 1.7.0
       expect-type: 1.3.0
       magic-string: 0.30.21
