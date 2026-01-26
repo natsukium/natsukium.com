@@ -24,7 +24,7 @@
 		"remark-parse": "11.0.0",
 		"remark-stringify": "11.0.0",
 		"unified": "11.0.5",
-		"vitest": "4.0.17"
+		"vitest": "4.0.18"
 	},
 	"author": "natsukium",
 	"license": "MIT"
