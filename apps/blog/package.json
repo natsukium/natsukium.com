@@ -37,7 +37,7 @@
 		"@astrojs/tailwind": "6.0.2",
 		"@tailwindcss/typography": "0.5.19",
 		"@types/github-slugger": "2.0.0",
-		"@types/react": "19.2.8",
+		"@types/react": "19.2.9",
 		"@typescript-eslint/parser": "8.53.0",
 		"globals": "17.0.0",
 		"react": "19.2.3",
