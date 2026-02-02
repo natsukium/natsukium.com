@@ -13,7 +13,7 @@
 		"unified": "^10.0.0 || ^11.0.0"
 	},
 	"dependencies": {
-		"impit": "^0.8.1",
+		"impit": "^0.9.0",
 		"unist-util-visit": "^5.0.0"
 	},
 	"devDependencies": {
