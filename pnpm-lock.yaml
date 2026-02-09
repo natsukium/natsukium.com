@@ -78,8 +78,8 @@ importers:
         specifier: 8.54.0
         version: 8.54.0(eslint@9.39.2(jiti@1.21.7))(typescript@5.9.3)
       globals:
-        specifier: 17.2.0
-        version: 17.2.0
+        specifier: 17.3.0
+        version: 17.3.0
       react:
         specifier: 19.2.4
         version: 19.2.4
@@ -112,7 +112,7 @@ importers:
     dependencies:
       impit:
         specifier: ^0.9.0
-        version: 0.9.0
+        version: 0.9.1
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.1.0
@@ -1873,14 +1873,15 @@ packages:
 
   glob@10.5.0:
     resolution: {integrity: sha512-DfXN8DfhJ7NH3Oe7cFmu3NCu1wKbkReJ8TorzSAFbSKrlNaQSKfIzqYqVY8zlbs2NLBbWpRiU52GX2PbaBVNkg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
 
-  globals@17.2.0:
-    resolution: {integrity: sha512-tovnCz/fEq+Ripoq+p/gN1u7l6A7wwkoBT9pRCzTHzsD/LvADIzXZdjmRymh5Ztf0DYC3Rwg5cZRYjxzBmzbWg==}
+  globals@17.3.0:
+    resolution: {integrity: sha512-yMqGUQVVCkD4tqjOJf3TnrvaaHDMYp4VlUSObbkIiuCPe/ofdMBFIAcBbCSRFWOnos6qRiTVStDwqPLUclaxIw==}
     engines: {node: '>=18'}
 
   h3@1.15.5:
@@ -1941,60 +1942,60 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  impit-darwin-arm64@0.9.0:
-    resolution: {integrity: sha512-36xj+OQXR2sG/A/haPPXEvq20HGkHNbcCw60qW4g4AJbANLTGktupc5190P2/NS/aNp6UyQIKIJcnGZsJ2sfqg==}
+  impit-darwin-arm64@0.9.1:
+    resolution: {integrity: sha512-MB6iE7tdbBX2qqx8TLdIN7HDNnSIKMWr69/rhhE32isj8wGUUdp3Hzurekf3HV2n0Ll7fFX9+oDSltnwpMcWLw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  impit-darwin-x64@0.9.0:
-    resolution: {integrity: sha512-jLlZ8skK1jCnh5uCeEW57M32C6++GSqx8o+YX0kTl8pT75/T/6uWfL1MjLTPcvfLt7YNocWWnibAn4T8a9sROg==}
+  impit-darwin-x64@0.9.1:
+    resolution: {integrity: sha512-AywfeXZb+NFbHu1KZEH9Rqivv7YLXgSoKqZV5IZ0bRbVl1y0bfMj6udCiJNWqECozIe9m+CVDMmXvt09JuIt4w==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  impit-linux-arm64-gnu@0.9.0:
-    resolution: {integrity: sha512-+Jku/UhEv96a11rlgqmBCm8ahnOToMG7hNtaqeNTXhY02NS4uLEh1JvRoZzF2zX6B77z+95bZPdW33ki6JumWw==}
+  impit-linux-arm64-gnu@0.9.1:
+    resolution: {integrity: sha512-CoCT3RlOwJZvHyW/4iW4tL7tC9GEPM/FJc8l/LSyqpADP1tZ1vUk4olFI7rcqoDsWSz4JOC4biOCuAFqnoKtIA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  impit-linux-arm64-musl@0.9.0:
-    resolution: {integrity: sha512-EgWJzjZ4xfI9EOqVcnjsr3Lssn8sIOnaM0BCztnKUFTltd1kevLyOIKDziKHOuPZ4TMrtqnQRrA+4zQERD+8tg==}
+  impit-linux-arm64-musl@0.9.1:
+    resolution: {integrity: sha512-a3dEWxVSObXT/rlEUIsHo0TUfn2Nb2aQJL67RESNGCf0JDvwvaHHQBVtif2hGLpg1IKPCO2Quak2Ae0cdx6L+A==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  impit-linux-x64-gnu@0.9.0:
-    resolution: {integrity: sha512-ndOonFDdYKduR/25fmMxPX5UsHV3i2K64Td5pYN5lYXUX+Jc2JzgQCMtYdO4afamfCnd85y4wWq+FwUG9D8qYg==}
+  impit-linux-x64-gnu@0.9.1:
+    resolution: {integrity: sha512-fjWfO5kI5FdCgHwKSbspstKUxru77HDCx/YF+MT3lmF6HdLo3MR4xVW/oNfN9Tg/QdZrj+nzuOXNYRE0xLIShg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  impit-linux-x64-musl@0.9.0:
-    resolution: {integrity: sha512-pi29IPmroTPzM+y7ZMmQyxNVVDwXLY9eFWkbRQq9x6q5CYwUclRQTa6jI6N8Nir+8Dt7kmoYBH0SSdzkcJemnQ==}
+  impit-linux-x64-musl@0.9.1:
+    resolution: {integrity: sha512-iKfgk7v9LRJwD1gfP2B1R5zZ/L3aLP5jb+DyotM0U2NHf8OCWlUB9TinxOqFSlVOY1BuGPPxVk5tqogcLVRjVA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  impit-win32-arm64-msvc@0.9.0:
-    resolution: {integrity: sha512-Oc8w633iwLG+4hpgsCihMZh2ZGg/u/ndP+qddscbF5hBChDRVgGWS9oCGZ2sTU7P1f5jZ4hsJmWttHX5DvmHsw==}
+  impit-win32-arm64-msvc@0.9.1:
+    resolution: {integrity: sha512-9IJnAT4MpxDkIp+okbzBv5GtbE7FhsOUP3Ui1Cs/vlU7+iqe/d+M9jVrOg34vB7ZN/q44SPR3ycBar4YiM/KwA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  impit-win32-x64-msvc@0.9.0:
-    resolution: {integrity: sha512-K4EuJ6nHsScRS9n9w9a6XNE55t1fsK+wuLAw67gypBwxU7lkvckKqgQmZdibkgYwBeYK7kIG8zN1/gme+8bmqw==}
+  impit-win32-x64-msvc@0.9.1:
+    resolution: {integrity: sha512-vrSxYU3ZPCXXobyaUoylSaf0aQrSecOzg125iDCXJQC5Lzcak0RM/jyUHlLO2O163k6EDtf1S/W6seLyQzLv/A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  impit@0.9.0:
-    resolution: {integrity: sha512-JCr9/ZHTJcK6IPk1BQoK4R1KghjmG7BgfvagRH7TDwQ9AXRy95YHkSlcNsgmVWALwyQuC5DntmLVTvMWVJNajg==}
+  impit@0.9.1:
+    resolution: {integrity: sha512-ucxvTZAzRarDWrpNr7Osfpq8sjCZ66vaM1ThJIbwqMj27Zdaw94o9qrCgVZkcCDLv7/u2efg6X+29q/mEQPsDA==}
     engines: {node: '>= 20'}
 
   import-fresh@3.3.1:
@@ -5057,7 +5058,7 @@ snapshots:
 
   globals@14.0.0: {}
 
-  globals@17.2.0: {}
+  globals@17.3.0: {}
 
   h3@1.15.5:
     dependencies:
@@ -5174,40 +5175,40 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  impit-darwin-arm64@0.9.0:
+  impit-darwin-arm64@0.9.1:
     optional: true
 
-  impit-darwin-x64@0.9.0:
+  impit-darwin-x64@0.9.1:
     optional: true
 
-  impit-linux-arm64-gnu@0.9.0:
+  impit-linux-arm64-gnu@0.9.1:
     optional: true
 
-  impit-linux-arm64-musl@0.9.0:
+  impit-linux-arm64-musl@0.9.1:
     optional: true
 
-  impit-linux-x64-gnu@0.9.0:
+  impit-linux-x64-gnu@0.9.1:
     optional: true
 
-  impit-linux-x64-musl@0.9.0:
+  impit-linux-x64-musl@0.9.1:
     optional: true
 
-  impit-win32-arm64-msvc@0.9.0:
+  impit-win32-arm64-msvc@0.9.1:
     optional: true
 
-  impit-win32-x64-msvc@0.9.0:
+  impit-win32-x64-msvc@0.9.1:
     optional: true
 
-  impit@0.9.0:
+  impit@0.9.1:
     optionalDependencies:
-      impit-darwin-arm64: 0.9.0
-      impit-darwin-x64: 0.9.0
-      impit-linux-arm64-gnu: 0.9.0
-      impit-linux-arm64-musl: 0.9.0
-      impit-linux-x64-gnu: 0.9.0
-      impit-linux-x64-musl: 0.9.0
-      impit-win32-arm64-msvc: 0.9.0
-      impit-win32-x64-msvc: 0.9.0
+      impit-darwin-arm64: 0.9.1
+      impit-darwin-x64: 0.9.1
+      impit-linux-arm64-gnu: 0.9.1
+      impit-linux-arm64-musl: 0.9.1
+      impit-linux-x64-gnu: 0.9.1
+      impit-linux-x64-musl: 0.9.1
+      impit-win32-arm64-msvc: 0.9.1
+      impit-win32-x64-msvc: 0.9.1
 
   import-fresh@3.3.1:
     dependencies:
