@@ -42,7 +42,7 @@ importers:
         version: 9.0.0
       satori:
         specifier: ^0.19.0
-        version: 0.19.1
+        version: 0.19.2
       shiki:
         specifier: ^3.21.0
         version: 3.22.0
@@ -112,7 +112,7 @@ importers:
     dependencies:
       impit:
         specifier: ^0.9.0
-        version: 0.9.1
+        version: 0.9.2
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.1.0
@@ -1942,60 +1942,60 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  impit-darwin-arm64@0.9.1:
-    resolution: {integrity: sha512-MB6iE7tdbBX2qqx8TLdIN7HDNnSIKMWr69/rhhE32isj8wGUUdp3Hzurekf3HV2n0Ll7fFX9+oDSltnwpMcWLw==}
+  impit-darwin-arm64@0.9.2:
+    resolution: {integrity: sha512-YHfrBeWwwI6je3OLBK8kgxR49bLbYGLkF/HFUHjPnhZxR821zd0NNPsYMX/1Rrasx0Zpu3skhN68ofudilhHdg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  impit-darwin-x64@0.9.1:
-    resolution: {integrity: sha512-AywfeXZb+NFbHu1KZEH9Rqivv7YLXgSoKqZV5IZ0bRbVl1y0bfMj6udCiJNWqECozIe9m+CVDMmXvt09JuIt4w==}
+  impit-darwin-x64@0.9.2:
+    resolution: {integrity: sha512-FPH7gE0YdHfYRjX9qGKIvfQ6hdgo9GM+/wD1ktUC2UiEwKbwjpmrBhdXt0bSudrw9D28T4KR1w4TmX4X+uBYEA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  impit-linux-arm64-gnu@0.9.1:
-    resolution: {integrity: sha512-CoCT3RlOwJZvHyW/4iW4tL7tC9GEPM/FJc8l/LSyqpADP1tZ1vUk4olFI7rcqoDsWSz4JOC4biOCuAFqnoKtIA==}
+  impit-linux-arm64-gnu@0.9.2:
+    resolution: {integrity: sha512-9Va4WmklAWwjJYT5M74u6HHzmRA8Tw8tdwzsrhIBmEyJ/gzCD6TJD0sE0mgFGd8v/mEB/WfMX1VnpOQmPm1gDQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  impit-linux-arm64-musl@0.9.1:
-    resolution: {integrity: sha512-a3dEWxVSObXT/rlEUIsHo0TUfn2Nb2aQJL67RESNGCf0JDvwvaHHQBVtif2hGLpg1IKPCO2Quak2Ae0cdx6L+A==}
+  impit-linux-arm64-musl@0.9.2:
+    resolution: {integrity: sha512-eiZs4C4vOPRi5A/V/bNTpX9Ays1m1trMfDXRH/Bnulo7XPngP6AEGW0SaKBznfDhiFOfO7hcDPupkGvSfX5rpw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  impit-linux-x64-gnu@0.9.1:
-    resolution: {integrity: sha512-fjWfO5kI5FdCgHwKSbspstKUxru77HDCx/YF+MT3lmF6HdLo3MR4xVW/oNfN9Tg/QdZrj+nzuOXNYRE0xLIShg==}
+  impit-linux-x64-gnu@0.9.2:
+    resolution: {integrity: sha512-KXkc6A0jh6c1ymxbcxgMbjNwr7YCm48froJaQWzXHg9nRSepJxprHtlWoFcz9HG/D9+eBQXTpMAJMAqXMs+NtA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  impit-linux-x64-musl@0.9.1:
-    resolution: {integrity: sha512-iKfgk7v9LRJwD1gfP2B1R5zZ/L3aLP5jb+DyotM0U2NHf8OCWlUB9TinxOqFSlVOY1BuGPPxVk5tqogcLVRjVA==}
+  impit-linux-x64-musl@0.9.2:
+    resolution: {integrity: sha512-GWXqohv79LgOF0YUP/rwVGZ4uQZWK/NJUhGZR4PgKRMb1HHH2S2wrGtSP7AHyW+GT27Tv9yrRcyidVK+FYxOVw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  impit-win32-arm64-msvc@0.9.1:
-    resolution: {integrity: sha512-9IJnAT4MpxDkIp+okbzBv5GtbE7FhsOUP3Ui1Cs/vlU7+iqe/d+M9jVrOg34vB7ZN/q44SPR3ycBar4YiM/KwA==}
+  impit-win32-arm64-msvc@0.9.2:
+    resolution: {integrity: sha512-ta82EKAMjCXhnCs6n9jr7hzbjX3wBWhW21AdAwZEiX4RaJNmE6j0oH0ZrTZuCDJumxAV+1pJapB4q/BCuoP1IQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  impit-win32-x64-msvc@0.9.1:
-    resolution: {integrity: sha512-vrSxYU3ZPCXXobyaUoylSaf0aQrSecOzg125iDCXJQC5Lzcak0RM/jyUHlLO2O163k6EDtf1S/W6seLyQzLv/A==}
+  impit-win32-x64-msvc@0.9.2:
+    resolution: {integrity: sha512-S1F8b4sKYwd0FORJWir4rrU0iZbQwebY+U/lkSJOK316P46sH8wu8wHB4TLVLLNpAUI0bp4sBgXlholqtlDAQw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  impit@0.9.1:
-    resolution: {integrity: sha512-ucxvTZAzRarDWrpNr7Osfpq8sjCZ66vaM1ThJIbwqMj27Zdaw94o9qrCgVZkcCDLv7/u2efg6X+29q/mEQPsDA==}
+  impit@0.9.2:
+    resolution: {integrity: sha512-flHQYxC16o7H+OKrO0zXv8Ob8Hs/E1Z1CfjGUHkN+6qqQksi1/2KMnZZEeSWfB9fM4b8SQVL6aQha/K6qVKqng==}
     engines: {node: '>= 20'}
 
   import-fresh@3.3.1:
@@ -2680,8 +2680,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  satori@0.19.1:
-    resolution: {integrity: sha512-/XaT/JiWLfNlgjlQdde4wXB1/6F+FEze9c3OW2QIH0ywsfOrY57YOetgESWyOFHW3JfEQ6dJAo2U9Xwb7+DDAw==}
+  satori@0.19.2:
+    resolution: {integrity: sha512-71plFHWcq6WJBM5sf/n0eHOmTBiKLUB/G8du7SmLTTLHKEKrV3TPHGKcEVIoyjnbhnjvu9HhLyF9MATB/zzL7g==}
     engines: {node: '>=16'}
 
   sax@1.4.4:
@@ -5175,40 +5175,40 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  impit-darwin-arm64@0.9.1:
+  impit-darwin-arm64@0.9.2:
     optional: true
 
-  impit-darwin-x64@0.9.1:
+  impit-darwin-x64@0.9.2:
     optional: true
 
-  impit-linux-arm64-gnu@0.9.1:
+  impit-linux-arm64-gnu@0.9.2:
     optional: true
 
-  impit-linux-arm64-musl@0.9.1:
+  impit-linux-arm64-musl@0.9.2:
     optional: true
 
-  impit-linux-x64-gnu@0.9.1:
+  impit-linux-x64-gnu@0.9.2:
     optional: true
 
-  impit-linux-x64-musl@0.9.1:
+  impit-linux-x64-musl@0.9.2:
     optional: true
 
-  impit-win32-arm64-msvc@0.9.1:
+  impit-win32-arm64-msvc@0.9.2:
     optional: true
 
-  impit-win32-x64-msvc@0.9.1:
+  impit-win32-x64-msvc@0.9.2:
     optional: true
 
-  impit@0.9.1:
+  impit@0.9.2:
     optionalDependencies:
-      impit-darwin-arm64: 0.9.1
-      impit-darwin-x64: 0.9.1
-      impit-linux-arm64-gnu: 0.9.1
-      impit-linux-arm64-musl: 0.9.1
-      impit-linux-x64-gnu: 0.9.1
-      impit-linux-x64-musl: 0.9.1
-      impit-win32-arm64-msvc: 0.9.1
-      impit-win32-x64-msvc: 0.9.1
+      impit-darwin-arm64: 0.9.2
+      impit-darwin-x64: 0.9.2
+      impit-linux-arm64-gnu: 0.9.2
+      impit-linux-arm64-musl: 0.9.2
+      impit-linux-x64-gnu: 0.9.2
+      impit-linux-x64-musl: 0.9.2
+      impit-win32-arm64-msvc: 0.9.2
+      impit-win32-x64-msvc: 0.9.2
 
   import-fresh@3.3.1:
     dependencies:
@@ -6076,7 +6076,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  satori@0.19.1:
+  satori@0.19.2:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
