@@ -8,20 +8,20 @@
   height: 10rem;
   overflow: hidden;
   border-radius: 0.25rem;
-  border: 1px solid rgb(var(--color-border));
-  background-color: rgba(var(--color-card), 0.3);
+  border: 1px solid rgb(var(--b16-300));
+  background-color: rgba(var(--b16-200), 0.3);
   text-decoration: none;
   transition: border-color 0.2s;
 }
 .ogp-card__link:hover {
-  border-color: rgb(var(--color-accent));
+  border-color: rgb(var(--b16-blue));
 }
 .ogp-card__thumbnail {
   flex-shrink: 0;
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: rgba(var(--color-card), 0.5);
+  background-color: rgba(var(--b16-200), 0.5);
   overflow: hidden;
 }
 .ogp-card__thumbnail img {
@@ -42,14 +42,14 @@
 .ogp-card__title {
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgb(var(--color-text-base));
+  color: rgb(var(--b16-600));
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .ogp-card__description {
   font-size: 0.75rem;
-  color: rgba(var(--color-text-base), 0.7);
+  color: rgba(var(--b16-600), 0.7);
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -57,7 +57,7 @@
 }
 .ogp-card__url {
   font-size: 0.75rem;
-  color: rgba(var(--color-text-base), 0.5);
+  color: rgba(var(--b16-600), 0.5);
 }
 
 /* Mobile/Tablet: vertical layout */
