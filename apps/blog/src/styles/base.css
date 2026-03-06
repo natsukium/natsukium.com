@@ -30,6 +30,29 @@
 	--breakpoint-sm: 640px;
 }
 
+/*
+ * Typography prose variable overrides must be unlayered to beat
+ * @tailwindcss/typography plugin defaults in v4's cascade layers.
+ */
+.prose {
+	--tw-prose-body: var(--color-700);
+	--tw-prose-headings: var(--color-700);
+	--tw-prose-lead: var(--color-700);
+	--tw-prose-bold: var(--color-700);
+	--tw-prose-counters: var(--color-700);
+	--tw-prose-bullets: var(--color-700);
+	--tw-prose-hr: var(--color-700);
+	--tw-prose-quotes: var(--color-700);
+	--tw-prose-quote-borders: var(--color-700);
+	--tw-prose-captions: var(--color-700);
+	--tw-prose-code: var(--color-700);
+	--tw-prose-pre-code: var(--color-700);
+	--tw-prose-pre-bg: var(--color-200);
+	--tw-prose-th-borders: var(--color-700);
+	--tw-prose-td-borders: var(--color-700);
+	--tw-prose-links: var(--color-blue);
+}
+
 @layer base {
 	/* Shiki CSS variables mapping to base16 colors */
 	:root {
@@ -63,24 +86,6 @@
 		@apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
 	}
 	.prose {
-		/* Typography plugin variables mapped to base16 theme colors */
-		--tw-prose-body: var(--color-700);
-		--tw-prose-headings: var(--color-700);
-		--tw-prose-lead: var(--color-700);
-		--tw-prose-bold: var(--color-700);
-		--tw-prose-counters: var(--color-700);
-		--tw-prose-bullets: var(--color-700);
-		--tw-prose-hr: var(--color-700);
-		--tw-prose-quotes: var(--color-700);
-		--tw-prose-quote-borders: var(--color-700);
-		--tw-prose-captions: var(--color-700);
-		--tw-prose-code: var(--color-700);
-		--tw-prose-pre-code: var(--color-700);
-		--tw-prose-pre-bg: var(--color-700);
-		--tw-prose-th-borders: var(--color-700);
-		--tw-prose-td-borders: var(--color-700);
-		--tw-prose-links: var(--color-blue);
-
 		@apply prose-headings:!mb-3 prose-headings:!text-purple prose-h3:italic prose-p:!text-600 prose-a:!text-blue prose-a:!decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-cyan prose-blockquote:!border-l-cyan/50 prose-blockquote:opacity-80 prose-figcaption:!text-600 prose-figcaption:opacity-70 prose-strong:!text-red prose-code:rounded prose-code:bg-200/75 prose-code:p-1 prose-code:before:!content-none prose-code:after:!content-none prose-ol:!text-600 prose-ul:overflow-x-clip prose-ul:!text-600 prose-li:marker:!text-purple prose-table:text-600 prose-th:border prose-th:border-300 prose-td:border prose-td:border-300 prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-300 prose-hr:!border-300;
 	}
 	.prose a {
