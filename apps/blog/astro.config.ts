@@ -1,6 +1,6 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkHeadingMarkers from "remark-heading-markers";
@@ -19,13 +19,7 @@ const base16ShikiTheme = createCssVariablesTheme({
 // Use SITE_URL env var for preview deployments, fallback to production URL
 export default defineConfig({
 	site: process.env.SITE_URL || SITE.website,
-	integrations: [
-		tailwind({
-			applyBaseStyles: false,
-		}),
-		react(),
-		sitemap(),
-	],
+	integrations: [react(), sitemap()],
 	markdown: {
 		remarkPlugins: [
 			remarkToc,
@@ -44,6 +38,8 @@ export default defineConfig({
 		},
 	},
 	vite: {
+		// @ts-expect-error @tailwindcss/vite types reference Vite 7 while Astro 5 uses Vite 6
+		plugins: [tailwindcss()],
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
 		},

@@ -1,21 +1,72 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "../base16-plugin.js";
+
+/* Reset default Tailwind palette and breakpoints to only use base16 colors */
+@theme {
+	--color-*: initial;
+	--breakpoint-*: initial;
+
+	--color-100: rgb(var(--b16-100));
+	--color-200: rgb(var(--b16-200));
+	--color-300: rgb(var(--b16-300));
+	--color-400: rgb(var(--b16-400));
+	--color-500: rgb(var(--b16-500));
+	--color-600: rgb(var(--b16-600));
+	--color-700: rgb(var(--b16-700));
+	--color-800: rgb(var(--b16-800));
+	--color-red: rgb(var(--b16-red));
+	--color-orange: rgb(var(--b16-orange));
+	--color-yellow: rgb(var(--b16-yellow));
+	--color-green: rgb(var(--b16-green));
+	--color-cyan: rgb(var(--b16-cyan));
+	--color-blue: rgb(var(--b16-blue));
+	--color-purple: rgb(var(--b16-purple));
+	--color-pink: rgb(var(--b16-pink));
+
+	--font-sans: "IBM Plex Sans JP", sans-serif;
+	--font-mono: "IBM Plex Mono", monospace;
+
+	--breakpoint-sm: 640px;
+}
+
+/*
+ * Typography prose variable overrides must be unlayered to beat
+ * @tailwindcss/typography plugin defaults in v4's cascade layers.
+ */
+.prose {
+	--tw-prose-body: var(--color-700);
+	--tw-prose-headings: var(--color-700);
+	--tw-prose-lead: var(--color-700);
+	--tw-prose-bold: var(--color-700);
+	--tw-prose-counters: var(--color-700);
+	--tw-prose-bullets: var(--color-700);
+	--tw-prose-hr: var(--color-700);
+	--tw-prose-quotes: var(--color-700);
+	--tw-prose-quote-borders: var(--color-700);
+	--tw-prose-captions: var(--color-700);
+	--tw-prose-code: var(--color-700);
+	--tw-prose-pre-code: var(--color-700);
+	--tw-prose-pre-bg: var(--color-200);
+	--tw-prose-th-borders: var(--color-700);
+	--tw-prose-td-borders: var(--color-700);
+	--tw-prose-links: var(--color-blue);
+}
 
 @layer base {
-	/* Shiki CSS variables mapping to base16 colors via base16-tailwind */
+	/* Shiki CSS variables mapping to base16 colors */
 	:root {
-		--shiki-foreground: rgb(var(--color-600));
-		--shiki-background: rgb(var(--color-100));
-		--shiki-token-constant: rgb(var(--color-red));
-		--shiki-token-string: rgb(var(--color-green));
-		--shiki-token-comment: rgb(var(--color-400));
-		--shiki-token-keyword: rgb(var(--color-purple));
-		--shiki-token-parameter: rgb(var(--color-yellow));
-		--shiki-token-function: rgb(var(--color-blue));
-		--shiki-token-string-expression: rgb(var(--color-green));
-		--shiki-token-punctuation: rgb(var(--color-600));
-		--shiki-token-link: rgb(var(--color-purple));
+		--shiki-foreground: var(--color-600);
+		--shiki-background: var(--color-100);
+		--shiki-token-constant: var(--color-red);
+		--shiki-token-string: var(--color-green);
+		--shiki-token-comment: var(--color-400);
+		--shiki-token-keyword: var(--color-purple);
+		--shiki-token-parameter: var(--color-yellow);
+		--shiki-token-function: var(--color-blue);
+		--shiki-token-string-expression: var(--color-green);
+		--shiki-token-punctuation: var(--color-600);
+		--shiki-token-link: var(--color-purple);
 	}
 
 	body {
@@ -26,7 +77,7 @@
 		@apply mx-auto max-w-3xl px-4;
 	}
 	a {
-		@apply outline-2 outline-offset-1 outline-blue focus-visible:no-underline focus-visible:outline-dashed;
+		@apply outline-offset-1 focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-blue focus-visible:no-underline;
 	}
 	svg {
 		@apply inline-block h-6 w-6 fill-600 group-hover:fill-blue;
@@ -101,11 +152,6 @@
 	}
 }
 
-@layer components {
-	.display-none {
-		@apply hidden;
-	}
-	.focus-outline {
-		@apply outline-2 outline-offset-1 outline-blue focus-visible:no-underline focus-visible:outline-dashed;
-	}
+@utility focus-outline {
+	@apply outline-offset-1 focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-blue focus-visible:no-underline;
 }
