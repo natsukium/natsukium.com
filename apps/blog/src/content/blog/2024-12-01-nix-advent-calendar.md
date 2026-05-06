@@ -2,6 +2,7 @@
 title: 2024年を振り返る
 pubDatetime: 2024-12-01
 description: "Nix アドベントカレンダーの一環として 2024 年の Nix 関連の活動を振り返る"
+tags: ["nix", "nixpkgs", "advent-calendar"]
 ---
 
 この記事は Nix アドベントカレンダー 2024 の1日の記事である。

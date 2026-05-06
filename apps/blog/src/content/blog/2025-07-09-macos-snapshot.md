@@ -2,6 +2,7 @@
 title: macOSでTime Machineを有効化せずスナップショットをとる
 pubDatetime: 2025-07-09
 description: Time Machineをセットアップせずに、コマンドラインからAPFSスナップショットを作成し、AIコーディングツールなどによる不慮のファイル変更からシステムを保護しよう
+tags: ["macos", "backup"]
 ---
 
 ## はじめに
