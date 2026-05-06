@@ -99,6 +99,7 @@
           packages.ci = pkgs.buildEnv {
             name = "ci-dependencies";
             paths = with pkgs; [
+              nodejs-slim
               pnpm
               wrangler
             ];
