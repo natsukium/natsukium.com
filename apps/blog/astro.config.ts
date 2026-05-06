@@ -38,7 +38,6 @@ export default defineConfig({
 		},
 	},
 	vite: {
-		// @ts-expect-error @tailwindcss/vite types reference Vite 7 while Astro 5 uses Vite 6
 		plugins: [tailwindcss()],
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
