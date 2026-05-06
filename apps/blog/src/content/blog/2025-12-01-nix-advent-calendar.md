@@ -2,6 +2,7 @@
 title: Nixと文芸的プログラミング
 pubDatetime: 2025-12-01
 description: "Nixによる宣言的な設定の意図を文芸的プログラミングを用いて記録する"
+tags: ["nix", "advent-calendar", "literate-programming", "emacs"]
 ---
 
 この記事は [Nix アドベントカレンダー 2025](https://adventar.org/calendars/11657) の1日目の記事である。
