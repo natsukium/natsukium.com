@@ -33,7 +33,7 @@
 		"yaml": "^2.8.2"
 	},
 	"devDependencies": {
-		"@astrojs/react": "5.0.4",
+		"@astrojs/react": "5.0.5",
 		"@astrojs/sitemap": "3.7.2",
 		"@tailwindcss/typography": "0.5.19",
 		"@tailwindcss/vite": "4.2.4",
