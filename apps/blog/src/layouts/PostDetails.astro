@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
+import Comments from "@components/Comments";
 import Datetime from "@components/Datetime";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
@@ -7,6 +8,7 @@ import Layout from "@layouts/Layout.astro";
 import { SITE } from "@config";
 import ShareLinks from "@components/ShareLinks.astro";
 import Tag from "@components/Tag.astro";
+import { documentUri } from "@utils/standardSite";
 import { getOgImageUrl } from "@utils/ogImage";
 import { slugifyStr } from "@utils/slugify";
 
@@ -27,6 +29,7 @@ const {
 	modDatetime,
 	tags,
 	editPost,
+	bskyPostUri,
 } = post.data;
 
 const { Content } = await render(post);
@@ -46,6 +49,7 @@ const layoutProps = {
 	canonicalURL,
 	ogImage: ogUrl,
 	scrollSmooth: true,
+	standardSiteDocumentUri: documentUri(post.id),
 };
 
 /* ========== Prev/Next Posts ========== */
@@ -178,6 +182,15 @@ const nextPost =
         )
       }
     </div>
+
+    {
+      bskyPostUri && (
+        <>
+          <hr class="my-6 border-dashed" />
+          <Comments client:visible postUri={bskyPostUri} />
+        </>
+      )
+    }
   </main>
   <Footer />
 </Layout>

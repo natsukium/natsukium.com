@@ -70,6 +70,14 @@
         "unicorn/consistent-function-scoping": "off",
         "vitest/no-conditional-in-test": "off"
       }
+    },
+    {
+      "files": ["**/scripts/**"],
+      "rules": {
+        "no-console": "off",
+        "eslint/no-await-in-loop": "off",
+        "eslint/max-lines": "off"
+      }
     }
   ],
   "settings": {

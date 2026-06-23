@@ -40,6 +40,9 @@ const blog = defineCollection({
         .optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
+      // Bluesky post backing the comment thread; accepts a bsky.app URL or an
+      // at:// URI. Same post can be referenced by standard.site's bskyPostRef.
+      bskyPostUri: z.string().optional(),
       editPost: z
         .object({
           disabled: z.boolean().optional(),
