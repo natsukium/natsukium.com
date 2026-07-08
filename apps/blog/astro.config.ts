@@ -1,3 +1,4 @@
+import { unified } from "@astrojs/markdown-remark";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -21,17 +22,19 @@ export default defineConfig({
 	site: process.env.SITE_URL || SITE.website,
 	integrations: [react(), sitemap()],
 	markdown: {
-		remarkPlugins: [
-			remarkToc,
-			[
-				remarkCollapse,
-				{
-					test: "Table of contents",
-				},
+		processor: unified({
+			remarkPlugins: [
+				remarkToc,
+				[
+					remarkCollapse,
+					{
+						test: "Table of contents",
+					},
+				],
+				remarkHeadingMarkers,
+				[remarkOgpCard, { thumbnailPosition: "left" }],
 			],
-			remarkHeadingMarkers,
-			[remarkOgpCard, { thumbnailPosition: "left" }],
-		],
+		}),
 		shikiConfig: {
 			theme: base16ShikiTheme,
 			wrap: true,
