@@ -4,22 +4,22 @@ import postOgImage from "./og-templates/post";
 import siteOgImage from "./og-templates/site";
 
 function svgBufferToPngBuffer(svg: string) {
-	const resvg = new Resvg(svg);
-	const pngData = resvg.render();
-	return new Uint8Array(pngData.asPng());
+  const resvg = new Resvg(svg);
+  const pngData = resvg.render();
+  return new Uint8Array(pngData.asPng());
 }
 
 export async function generateOgImageForPost(post: CollectionEntry<"blog">) {
-	const svg = await postOgImage(post);
-	return svgBufferToPngBuffer(svg);
+  const svg = await postOgImage(post);
+  return svgBufferToPngBuffer(svg);
 }
 
 export type SiteOgOptions = {
-	postCount: number;
-	topTags: string[];
+  postCount: number;
+  topTags: string[];
 };
 
 export async function generateOgImageForSite(options: SiteOgOptions) {
-	const svg = await siteOgImage(options);
-	return svgBufferToPngBuffer(svg);
+  const svg = await siteOgImage(options);
+  return svgBufferToPngBuffer(svg);
 }

@@ -1,12 +1,11 @@
 ---
 // Read YAML scheme files directly to avoid tailwindcss/plugin resolution issue
-import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
-import { parse } from "yaml";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import type { Theme } from "../types";
-// biome-ignore lint/correctness/noUnusedImports: Used in Astro template below
 import ThemePickerClient from "./ThemePickerClient";
+import { createRequire } from "node:module";
+import { parse } from "yaml";
 
 interface SchemeYaml {
 	system: string;
@@ -27,7 +26,7 @@ const packageRoot = dirname(dirname(libPath));
 const schemesPath = join(packageRoot, "schemes/base16");
 
 function parseHexColor(hex: string): string | null {
-	if (typeof hex !== "string" || !/^#[0-9a-fA-F]{6}$/.test(hex)) {
+	if (typeof hex !== "string" || !/^#[0-9a-fA-F]{6}$/u.test(hex)) {
 		return null;
 	}
 	const r = parseInt(hex.slice(1, 3), 16);
@@ -41,7 +40,7 @@ let schemeFiles: string[] = [];
 if (existsSync(schemesPath)) {
 	schemeFiles = readdirSync(schemesPath).filter((f) => f.endsWith(".yaml"));
 } else {
-	console.error(`Schemes directory not found: ${schemesPath}`);
+	
 }
 
 const BASE_KEYS = [
@@ -63,7 +62,6 @@ const BASE_KEYS = [
 	"base0F",
 ] as const;
 
-// biome-ignore lint/correctness/noUnusedVariables: Used in Astro template below
 const themes: Theme[] = schemeFiles
 	.map((filename): Theme | null => {
 		try {
@@ -71,7 +69,7 @@ const themes: Theme[] = schemeFiles
 			const scheme = parse(content) as SchemeYaml;
 
 			if (!scheme.name || !scheme.palette || !scheme.variant) {
-				console.error(`Invalid scheme file: ${filename}`);
+				
 				return null;
 			}
 
@@ -81,7 +79,7 @@ const themes: Theme[] = schemeFiles
 				const hex = scheme.palette[key];
 				const rgb = parseHexColor(hex);
 				if (!rgb) {
-					console.error(`Invalid color ${key} in ${filename}: ${hex}`);
+					
 					return "rgb(0, 0, 0)";
 				}
 				return rgb;
@@ -94,7 +92,7 @@ const themes: Theme[] = schemeFiles
 				colors,
 			};
 		} catch (error) {
-			console.error(`Failed to parse scheme file: ${filename}`, error);
+			
 			return null;
 		}
 	})

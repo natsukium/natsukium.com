@@ -3,10 +3,10 @@ import { type CollectionEntry, render } from "astro:content";
 import Datetime from "@components/Datetime";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
+import Layout from "@layouts/Layout.astro";
+import { SITE } from "@config";
 import ShareLinks from "@components/ShareLinks.astro";
 import Tag from "@components/Tag.astro";
-import { SITE } from "@config";
-import Layout from "@layouts/Layout.astro";
 import { getOgImageUrl } from "@utils/ogImage";
 import { slugifyStr } from "@utils/slugify";
 
@@ -50,16 +50,16 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, id }) => ({
+const allPosts = posts.map(({ data: { title: postTitle }, id }) => ({
 	id,
-	title,
+	title: postTitle,
 }));
 
 const currentPostIndex = allPosts.findIndex((a) => a.id === post.id);
 
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const prevPost = currentPostIndex === 0 ? null : allPosts[currentPostIndex - 1];
 const nextPost =
-	currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+	currentPostIndex === allPosts.length ? null : allPosts[currentPostIndex + 1];
 ---
 
 <Layout {...layoutProps}>
@@ -207,10 +207,10 @@ const nextPost =
     progressBar.id = "myBar";
 
     // Append the progress bar to the progress container
-    progressContainer.appendChild(progressBar);
+    progressContainer.append(progressBar);
 
     // Append the progress container to the document body or any other desired parent element
-    document.body.appendChild(progressContainer);
+    document.body.append(progressContainer);
   }
   createProgressBar();
 
@@ -225,7 +225,7 @@ const nextPost =
         document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
       if (document) {
-        const myBar = document.getElementById("myBar");
+        const myBar = document.querySelector("#myBar");
         if (myBar) {
           myBar.style.width = scrolled + "%";
         }
@@ -250,8 +250,8 @@ const nextPost =
       const span = document.createElement("span");
       span.ariaHidden = "true";
       span.innerText = "#";
-      link.appendChild(span);
-      heading.appendChild(link);
+      link.append(span);
+      heading.append(link);
     }
   }
   addHeadingLinks();
@@ -271,11 +271,11 @@ const nextPost =
         "copy-code absolute right-3 -top-3 rounded bg-200 px-2 py-1 text-xs leading-4 text-600 font-medium";
       copyButton.innerHTML = copyButtonLabel;
       codeBlock.setAttribute("tabindex", "0");
-      codeBlock.appendChild(copyButton);
+      codeBlock.append(copyButton);
 
       // wrap codebock with relative parent element
       codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
-      wrapper.appendChild(codeBlock);
+      wrapper.append(codeBlock);
 
       copyButton.addEventListener("click", async () => {
         await copyCode(codeBlock, copyButton);

@@ -16,9 +16,9 @@ import type { Plugin } from "unified";
  * Output: <h3>### Third Level Heading</h3>
  */
 const remarkHeadingMarkers: Plugin<[], Root> = () => {
-	return (tree) => {
-		visitNode(tree);
-	};
+  return (tree) => {
+    visitNode(tree);
+  };
 };
 
 /**
@@ -31,16 +31,16 @@ const remarkHeadingMarkers: Plugin<[], Root> = () => {
  * @param node - The AST node to visit
  */
 function visitNode(node: Root | Heading | Text | any): void {
-	if (node.type === "heading") {
-		addMarkerToHeading(node as Heading);
-	}
+  if (node.type === "heading") {
+    addMarkerToHeading(node as Heading);
+  }
 
-	// Recursively visit children if they exist
-	if (node.children && Array.isArray(node.children)) {
-		for (const child of node.children) {
-			visitNode(child);
-		}
-	}
+  // Recursively visit children if they exist
+  if (node.children && Array.isArray(node.children)) {
+    for (const child of node.children) {
+      visitNode(child);
+    }
+  }
 }
 
 /**
@@ -52,16 +52,16 @@ function visitNode(node: Root | Heading | Text | any): void {
  * @param heading - The heading node to modify
  */
 function addMarkerToHeading(heading: Heading): void {
-	// Generate the marker based on heading depth (1-6)
-	const marker = "#".repeat(heading.depth) + " ";
+  // Generate the marker based on heading depth (1-6)
+  const marker = "#".repeat(heading.depth) + " ";
 
-	// Find the first text node in the heading's children
-	const firstTextNode = findFirstTextNode(heading.children);
+  // Find the first text node in the heading's children
+  const firstTextNode = findFirstTextNode(heading.children);
 
-	if (firstTextNode) {
-		// Prepend the marker to the text content
-		firstTextNode.value = marker + firstTextNode.value;
-	}
+  if (firstTextNode) {
+    // Prepend the marker to the text content
+    firstTextNode.value = marker + firstTextNode.value;
+  }
 }
 
 /**
@@ -74,21 +74,21 @@ function addMarkerToHeading(heading: Heading): void {
  * @returns The first text node found, or undefined if none exists
  */
 function findFirstTextNode(nodes: any[]): Text | undefined {
-	for (const node of nodes) {
-		if (node.type === "text") {
-			return node as Text;
-		}
+  for (const node of nodes) {
+    if (node.type === "text") {
+      return node as Text;
+    }
 
-		// Recursively search in children
-		if (node.children && Array.isArray(node.children)) {
-			const textNode = findFirstTextNode(node.children);
-			if (textNode) {
-				return textNode;
-			}
-		}
-	}
+    // Recursively search in children
+    if (node.children && Array.isArray(node.children)) {
+      const textNode = findFirstTextNode(node.children);
+      if (textNode) {
+        return textNode;
+      }
+    }
+  }
 
-	return undefined;
+  return undefined;
 }
 
 export default remarkHeadingMarkers;

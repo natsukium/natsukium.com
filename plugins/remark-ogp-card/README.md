@@ -11,6 +11,7 @@ which relies on [undici](https://github.com/nodejs/undici) (Node.js's HTTP clien
 However, some websites block requests from Node.js by detecting its **TLS fingerprint**.
 
 TLS fingerprinting identifies clients based on characteristics of the TLS handshake, such as:
+
 - Supported cipher suites and their order
 - TLS extensions
 - Supported elliptic curves
@@ -31,40 +32,38 @@ pnpm add remark-ogp-card
 ## Usage
 
 ```typescript
-import remarkOgpCard from 'remark-ogp-card';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkHtml from 'remark-html';
+import remarkOgpCard from "remark-ogp-card";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkHtml from "remark-html";
 
 const result = await unified()
   .use(remarkParse)
-  .use(remarkOgpCard, { thumbnailPosition: 'left' })
+  .use(remarkOgpCard, { thumbnailPosition: "left" })
   .use(remarkHtml)
-  .process('https://example.com');
+  .process("https://example.com");
 ```
 
 ### With Astro
 
 ```typescript
 // astro.config.ts
-import remarkOgpCard from 'remark-ogp-card';
+import remarkOgpCard from "remark-ogp-card";
 
 export default defineConfig({
   markdown: {
-    remarkPlugins: [
-      [remarkOgpCard, { thumbnailPosition: 'left' }],
-    ],
+    remarkPlugins: [[remarkOgpCard, { thumbnailPosition: "left" }]],
   },
 });
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `cache` | `boolean` | `true` | Enable disk caching for OGP metadata and images |
-| `cacheDir` | `string` | `'public/ogp-cache'` | Directory for cached files |
-| `thumbnailPosition` | `'left' \| 'right'` | `'left'` | Position of the thumbnail image |
+| Option              | Type                | Default              | Description                                     |
+| ------------------- | ------------------- | -------------------- | ----------------------------------------------- |
+| `cache`             | `boolean`           | `true`               | Enable disk caching for OGP metadata and images |
+| `cacheDir`          | `string`            | `'public/ogp-cache'` | Directory for cached files                      |
+| `thumbnailPosition` | `'left' \| 'right'` | `'left'`             | Position of the thumbnail image                 |
 
 ## How It Works
 
@@ -166,6 +165,7 @@ The plugin implements a two-tier caching strategy:
 2. **Disk Cache**: Persists OGP metadata and images across builds
 
 Cache files are named using SHA256 hashes (first 16 characters) of the URL:
+
 - `{hash}.json` - OGP metadata
 - `{hash}.png` - Downloaded OGP image
 
