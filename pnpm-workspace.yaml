@@ -1,5 +1,5 @@
 packages:
-  - 'apps/*'
-  - 'plugins/*'
+  - "apps/*"
+  - "plugins/*"
 allowBuilds:
   esbuild: false

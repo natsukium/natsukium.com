@@ -1,16 +1,16 @@
 {
-	"name": "natsukium.com",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "pnpm -C apps/blog dev",
-		"start": "pnpm -C apps/blog start",
-		"build": "pnpm -C apps/blog build",
-		"preview": "pnpm -C apps/blog preview",
-		"sync": "pnpm -C apps/blog sync",
-		"format:check": "pnpm -C apps/blog format:check",
-		"format": "pnpm -C apps/blog format",
-		"lint": "pnpm -C apps/blog lint",
-		"test": "pnpm -C apps/blog test"
-	}
+  "name": "natsukium.com",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -C apps/blog dev",
+    "start": "pnpm -C apps/blog start",
+    "build": "pnpm -C apps/blog build",
+    "preview": "pnpm -C apps/blog preview",
+    "sync": "pnpm -C apps/blog sync",
+    "format:check": "pnpm -C apps/blog format:check",
+    "format": "pnpm -C apps/blog format",
+    "lint": "pnpm -C apps/blog lint",
+    "test": "pnpm -C apps/blog test"
+  }
 }

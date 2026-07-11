@@ -62,9 +62,9 @@
               src = ./.;
               hooks = {
                 actionlint.enable = true;
-                biome.enable = false;
                 treefmt.enable = true;
                 typos.enable = true;
+                oxlint.enable = true;
               };
             };
           };
@@ -72,7 +72,7 @@
           treefmt = {
             projectRootFile = "flake.nix";
             programs = {
-              biome = {
+              oxfmt = {
                 enable = true;
                 includes = [
                   "*.astro"
@@ -90,7 +90,6 @@
                   "*.ts"
                   "*.tsx"
                 ];
-                settings.javascript.globals = [ "Astro" ];
               };
               nixfmt.enable = true;
             };
@@ -110,6 +109,8 @@
               packages = with pkgs; [
                 nodejs-slim
                 pnpm
+                oxlint
+                oxfmt
               ];
               shellHook = config.pre-commit.installationScript;
             };

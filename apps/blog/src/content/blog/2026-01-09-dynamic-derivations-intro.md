@@ -58,6 +58,7 @@ https://github.com/NixOS/rfcs/pull/101
 
 すべての実験的機能がRFCを経ているわけではないが、
 大きな変更を伴う機能はRFCによるコミュニティでの議論を経て実験的機能として実装される傾向にある。
+
 </details>
 
 ### dynamic-derivations の概要
@@ -78,19 +79,19 @@ Dynamic Derivationsはビルド実行中に新たなDerivationを生成し、
 - 現代的な言語エコシステムへの対応
 
   Node.js (npm) や Rust (Cargo)、Goなどはソースコード内のロックファイルに基づいて依存関係を決定する。
-Dynamic Derivationsを利用することでこれらの動的な依存解決をNixのビルドプロセス内で扱うことが可能になる。
+  Dynamic Derivationsを利用することでこれらの動的な依存解決をNixのビルドプロセス内で扱うことが可能になる。
 
 - Import From Derivation (IFD) の代替
 
   従来、動的な依存解決にはIFDが用いられてきたが、
-これは評価処理をブロックするためパフォーマンス上のボトルネックとなっていた。
-Dynamic Derivationsは、IFDに依存しない形での動的なグラフ構築を提供する。
+  これは評価処理をブロックするためパフォーマンス上のボトルネックとなっていた。
+  Dynamic Derivationsは、IFDに依存しない形での動的なグラフ構築を提供する。
 
 - インクリメンタルビルドの粒度向上
 
   ビルドグラフを動的に生成できるため、
-ビルドツールのようにファイル単位など細かい粒度での依存管理が可能となる。
-これにより大規模なプロジェクトにおけるビルドの効率化が見込まれる。
+  ビルドツールのようにファイル単位など細かい粒度での依存管理が可能となる。
+  これにより大規模なプロジェクトにおけるビルドの効率化が見込まれる。
 
 ---
 
@@ -153,7 +154,7 @@ src = fetchurl {
 
 1. 評価時には実際のダウンロードは行わず、URLと期待されるハッシュ値のみをDerivationに記録する。
 2. ビルド時にサンドボックス内で実際にファイルをダウンロードする。
-ファイルのハッシュが事前指定された値と一致するか検証し、異なれば失敗させる。
+   ファイルのハッシュが事前指定された値と一致するか検証し、異なれば失敗させる。
 
 このようにFODを利用することで、Nixは評価フェーズの純粋性を維持したまま
 外部リソースの取得を可能にしている。
@@ -174,7 +175,7 @@ src = fetchurl {
 次に解決すべき依存関係が不透明な状態では
 効率的な並列化計画や事前のキャッシュ確認が機能しなくなるためだ。
 
-さらに重要なトレードオフとして、監査可能性とセキュリティがあげられる。 
+さらに重要なトレードオフとして、監査可能性とセキュリティがあげられる。
 静的グラフであれば、Derivationを解析するだけで、
 実際にビルドを行う前に何が使われるかを監査でき、
 SBOMの生成や脆弱性スキャンを行える。
@@ -221,33 +222,25 @@ $ nix derivation show nixpkgs#hello
       "src": "/nix/store/dw402azxjrgrzrk6j0p66wkqrab5mwgw-hello-2.12.2.tar.gz",
       "stdenv": "/nix/store/n1k7lm072r5k3g6v6wb91d2q4sxcxddm-stdenv-linux",
       "system": "x86_64-linux",
-      "version": "2.12.2",
+      "version": "2.12.2"
       // 省略...
     },
     "inputDrvs": {
       "/nix/store/00kr1572g79ra9m29vxxnrfxm38nb82m-hello-2.12.2.tar.gz.drv": {
         "dynamicOutputs": {},
-        "outputs": [
-          "out"
-        ]
+        "outputs": ["out"]
       },
       "/nix/store/i0lswaixfnfr6j3qr9xrij8nq93rp9b5-bash-5.3p3.drv": {
         "dynamicOutputs": {},
-        "outputs": [
-          "out"
-        ]
+        "outputs": ["out"]
       },
       "/nix/store/qyk0syp0q2znsv9dpva6krckkcgnxbi1-stdenv-linux.drv": {
         "dynamicOutputs": {},
-        "outputs": [
-          "out"
-        ]
+        "outputs": ["out"]
       },
       "/nix/store/yy1bpiw7j0nsygs1iyrz465bplp948ck-version-check-hook.drv": {
         "dynamicOutputs": {},
-        "outputs": [
-          "out"
-        ]
+        "outputs": ["out"]
       }
     },
     "inputSrcs": [
@@ -259,7 +252,7 @@ $ nix derivation show nixpkgs#hello
         "path": "/nix/store/i3zw7h6pg3n9r5i63iyqxrapa70i4v5w-hello-2.12.2"
       }
     },
-    "system": "x86_64-linux",
+    "system": "x86_64-linux"
     // 省略...
   }
 }
@@ -302,13 +295,13 @@ BEG_G {
   node_t n, m;
   edge_t e;
   int outdeg, changed;
-  
+
   for (n = fstnode($G); n; n = nxtnode(n)) {
     outdeg = 0;
     for (e = fstout(n); e; e = nxtout(e)) outdeg++;
     n.d = (outdeg == 0) ? 0 : -1;
   }
-  
+
   changed = 1;
   while (changed) {
     changed = 0;
@@ -327,6 +320,7 @@ N [$.d < 0] { delete($G, $); }
 ```
 
 `nix-store -q --graph $(nix-instantiate '<nixpkgs>' -A hello) | gvpr -c -a 2 -f depth-filter.gvpr | dot -Tsvg -o out.svg`
+
 </details>
 
 上図では、`hello` が `bash` や `stdenv`、ソースファイルへ直接依存している様子が見て取れる。
@@ -357,9 +351,9 @@ N [$.d < 0] { delete($G, $); }
 もう一つの壁は、npm、Cargo、Go Modulesといった現代的な言語エコシステムへの対応だ。
 これらのツールチェーンでは依存関係はソースコードに含まれるロックファイルの内容に基づいて動的に決定される。
 
-従来のNixモデルにおいて、この挙動は循環参照を引き起こす。 
+従来のNixモデルにおいて、この挙動は循環参照を引き起こす。
 依存関係を確定させるにはロックファイルの中身が必要だが、
-そのロックファイルを読むためにはソースコードを取得しなければならない。 
+そのロックファイルを読むためにはソースコードを取得しなければならない。
 ソースがなければ依存が決まらず、依存が決まらなければソースを取得できないという構造的な矛盾を
 静的グラフモデルは抱えている。
 
