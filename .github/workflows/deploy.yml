@@ -36,6 +36,13 @@ jobs:
       - name: Install dependencies
         run: nix profile add .#ci && pnpm install --frozen-lockfile
 
+      - name: Publish standard.site records
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.ATP_APP_PASSWORD != ''
+        run: pnpm -C apps/blog sync:standard-site
+        env:
+          ATP_IDENTIFIER: ${{ vars.ATP_IDENTIFIER }}
+          ATP_APP_PASSWORD: ${{ secrets.ATP_APP_PASSWORD }}
+
       - name: Build the project
         run: pnpm run build
         env:

@@ -3,6 +3,7 @@ import "@styles/base.css";
 import "@styles/ogp-card.css";
 import { LOCALE, SITE } from "@config";
 import { ClientRouter } from "astro:transitions";
+import { publicationUri } from "@utils/standardSite";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -16,6 +17,7 @@ export interface Props {
 	pubDatetime?: Date;
 	modDatetime?: Date | null;
 	scrollSmooth?: boolean;
+	standardSiteDocumentUri?: string;
 }
 
 const {
@@ -28,7 +30,10 @@ const {
 	pubDatetime,
 	modDatetime,
 	scrollSmooth = false,
+	standardSiteDocumentUri,
 } = Astro.props;
+
+const standardSitePublicationUri = publicationUri();
 
 const socialImageURL = new URL(
 	ogImage ?? SITE.ogImage ?? "og.png",
@@ -71,6 +76,21 @@ const structuredData = {
     <meta name="description" content={description} />
     <meta name="author" content={author} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- standard.site (atproto) record verification -->
+    {
+      standardSitePublicationUri && (
+        <link
+          rel="site.standard.publication"
+          href={standardSitePublicationUri}
+        />
+      )
+    }
+    {
+      standardSiteDocumentUri && (
+        <link rel="site.standard.document" href={standardSiteDocumentUri} />
+      )
+    }
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
