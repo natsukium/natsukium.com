@@ -30,7 +30,7 @@
     "remark-heading-markers": "workspace:*",
     "remark-ogp-card": "workspace:*",
     "remark-toc": "^9.0.0",
-    "satori": "^0.26.0",
+    "satori": "^0.28.0",
     "shiki": "^4.0.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^6.0.0",
