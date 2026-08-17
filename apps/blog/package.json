@@ -43,7 +43,7 @@
     "@tailwindcss/vite": "4.3.3",
     "@types/github-slugger": "2.0.0",
     "@types/react": "19.2.18",
-    "@typescript-eslint/parser": "8.66.0",
+    "@typescript-eslint/parser": "8.67.0",
     "globals": "17.11.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
