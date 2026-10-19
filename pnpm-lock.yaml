@@ -44,8 +44,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       satori:
-        specifier: ^0.44.0
-        version: 0.44.3
+        specifier: ^0.60.0
+        version: 0.60.3
       shiki:
         specifier: ^4.0.0
         version: 4.5.0
@@ -90,8 +90,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       vitest:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1))
+        specifier: 5.0.5
+        version: 5.0.5(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1))
 
   plugins/remark-heading-markers:
     devDependencies:
@@ -108,14 +108,14 @@ importers:
         specifier: 11.0.5
         version: 11.0.5
       vitest:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 5.0.5
+        version: 5.0.5(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
 
   plugins/remark-ogp-card:
     dependencies:
       impit:
         specifier: ^0.14.0
-        version: 0.14.5
+        version: 0.14.6
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.1.0
@@ -133,8 +133,8 @@ importers:
         specifier: 11.0.5
         version: 11.0.5
       vitest:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 5.0.5
+        version: 5.0.5(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
 
 packages:
 
@@ -1119,10 +1119,10 @@ packages:
       oxc-transform-react:
         optional: true
 
-  '@vitest/mocker@5.0.3':
-    resolution: {integrity: sha512-T8sWAIbkSyAjkwTcaEc3Iu0o9A27X1/kdXrizhZkGuSKScRQtRzclfAMpOTcGdXCsqxeWlpGy3XjqaW8CpLORg==}
+  '@vitest/mocker@5.0.5':
+    resolution: {integrity: sha512-xLL3lkDegJZw+MGoGaCCsFayDZthGgpAtr3Vziyfc4p7xH89K7KRPcRBBh/kEYm0Aqkt5DtTmkYpBtRV/FrHZg==}
     peerDependencies:
-      msw: ^2.4.9
+      msw: ^2.4.9 || ^3.0.0
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       msw:
@@ -1130,8 +1130,8 @@ packages:
       vite:
         optional: true
 
-  '@vitest/spy@5.0.3':
-    resolution: {integrity: sha512-XhFysQTB8AZ+P4gMi+Lpo99vg2AZi0qKpaB9yXQl37+CaMEAPO3iH/wGVnSyL5MPERiLezpqTVtrR6UZH5GCXg==}
+  '@vitest/spy@5.0.5':
+    resolution: {integrity: sha512-lwJRExuH417257Q5wv9QYugN9IMJkoxcrKrYxGPQkBzl7wlNpTUxD/5yNX4ESKVUIShKPgkGchYPFMWOOk0wzw==}
 
   '@volar/kit@2.4.28':
     resolution: {integrity: sha512-cKX4vK9dtZvDRaAzeoUdaAJEew6IdxHNCRrdp5Kvcl6zZOqb6jTOfk3kXkIkG3T7oTFXguEMt5+9ptyqYR84Pg==}
@@ -1836,60 +1836,60 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  impit-darwin-arm64@0.14.5:
-    resolution: {integrity: sha512-9B2fc/GLfb14SgIB6fK1zIgMsXPjCu14Xu9hudSyrZF+ue6XaJXFF/G1BS27FtDFdPAYAeUTReFOJBrglteYKg==}
+  impit-darwin-arm64@0.14.6:
+    resolution: {integrity: sha512-QhEENTXA727SlgIIIfPg4Ij2FEgwX/3rKCBpR84JxZZfQVVNO/KB2cVvt9aupokY1NZIo6oBFYJXF5PKyRVKbQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  impit-darwin-x64@0.14.5:
-    resolution: {integrity: sha512-EBH6H6SSRuMpw85/n+luT0EcbNbp6vQpUaEywH4bM2bk/xy8y6JN25O/Mzxa4YGUauoytmMqXs0kDzU5lxEjaA==}
+  impit-darwin-x64@0.14.6:
+    resolution: {integrity: sha512-BYcBdG7+smXHrhwLGqtWWw1jTsQSWwJO7ZyfkVPMUGRcbPFJAXXKRUjdFWcp2AdMWyI5JufNF3IZzAJ6B++8mw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  impit-linux-arm64-gnu@0.14.5:
-    resolution: {integrity: sha512-K7gB/KiekPZ+rDoFZqbBf1jROOHibZneGmM0lt/5xcn2lO+7e9GgArdPFj6sh4fvhtOckXxEc1ExpZP+lDy3Cg==}
+  impit-linux-arm64-gnu@0.14.6:
+    resolution: {integrity: sha512-yoUxNCBDsQ72H7uTtaLp7hUQJxr1/OtIZ7KnaerFeJwPpuK2KCeAIXa/9ajoa0GZ6BErm9ZwkggOENhAXu0xxw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  impit-linux-arm64-musl@0.14.5:
-    resolution: {integrity: sha512-QvjBwjYu1LXP+ota94z9fThRZjH75/Bai36eHvXUTiiFyesRRsmClc72ReyyaarnNNjcsl2RActqFMDrx77DXg==}
+  impit-linux-arm64-musl@0.14.6:
+    resolution: {integrity: sha512-2UL2ya3uRCdcZwkTL4Oe0RVyhvsONJHhbtD+0VZZkDKyCxyyjtZ6Rc1QQNKh2q/xKa3vNnzj/9qcu0mj/zCk8w==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  impit-linux-x64-gnu@0.14.5:
-    resolution: {integrity: sha512-+8hErR5H3+4N9r4vf5Cz6cSe57n/0zh5ksHBu2H9i5pENcM/VBRJ5qU5a3YjQwN4Ohtw/ROHBLF6V99eXUzThA==}
+  impit-linux-x64-gnu@0.14.6:
+    resolution: {integrity: sha512-6TJxs/iUQbxQuznb0gz5MQ15WIT4/IxHdwNG9II8kEKUEzVMLCun8IXiT5AGdYzwlmPYSIuxDjtY2ZALhC1FlA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  impit-linux-x64-musl@0.14.5:
-    resolution: {integrity: sha512-e6526hjfX8BV3XNhB1V7Xd3dJIEbLEwudZagwt4XdLqKcxHsU0iYnUyTJCogSQeEtZFepCSKUnGeg/r2lzxHow==}
+  impit-linux-x64-musl@0.14.6:
+    resolution: {integrity: sha512-AoneCmxaKKCx2wJZGLtFB6LrkTZUEViZ9XEsocpyMsm5IvV3mhj64AGIZI7zHlW7AFXq4MW0DPZkHiL/KxTB1A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  impit-win32-arm64-msvc@0.14.5:
-    resolution: {integrity: sha512-cABSwp3T1kNNp7++nyE8OlRuq8q9Cis3bWRHJjnTncfJ+NQlY0z1z3aLrI9ii1vvinCurCEWASuTptVSor5U1g==}
+  impit-win32-arm64-msvc@0.14.6:
+    resolution: {integrity: sha512-DRsyV3vNPeUTaRjtFiRqHb8FVFmLDR3NB47cvb+AKKuo+KUbRJdJR1zbDQMD2SOKhYRHf1PTxzamRIkl3yWqWQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  impit-win32-x64-msvc@0.14.5:
-    resolution: {integrity: sha512-JvjNkJ3mSB9nf74Ftdlr+KNxCC0EOAH6KUfEUqWRrGEnniIaUOMknxQw56Gbk7Zr1/e5eAOwxS/EBlASp6Yj4w==}
+  impit-win32-x64-msvc@0.14.6:
+    resolution: {integrity: sha512-0j7OHcgX8ui9ObSelx5v7OEEIfe00EgHcljq9RFR7oFzkD2ABS/6+fSyrXgu2LcC277vJ9oSfKjEacgGoCHOpQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  impit@0.14.5:
-    resolution: {integrity: sha512-MzoDiPBL5+QI5IEro4VDgZdm0BPY0LIf8tUykEFDjEI8NrjRL/qiiCqg4GDlIg5UbJzrKwCdvIgpRRArbbu7Dg==}
+  impit@0.14.6:
+    resolution: {integrity: sha512-1i5DxW0eRIUCtX9x+ZCSzD+FlRiEdrDOXazg0DYNMKUgnVwRWEwRhbA23Lpo2WOC674wZpwTQUubBi5z7m04Ng==}
     engines: {node: '>= 20'}
 
   imurmurhash@0.1.4:
@@ -2421,10 +2421,6 @@ packages:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
 
-  obug@2.2.1:
-    resolution: {integrity: sha512-XrsrhT5sybtKI6wakr2SPOlGZWWYbUXZ7a0jT8/QOeAPau+1X/bSegNe5YR75oJmEZQbKningirmGOEJCIk61Q==}
-    engines: {node: '>=12.20.0'}
-
   obug@3.0.0:
     resolution: {integrity: sha512-5vvB5+W7ePv+p3uqxi+RcW1XAzLW0/hxt3/4X4Lc4qHudzOhmBiBwOY6DRob4WnanAEGvNcLjF+KNOufrUoEQw==}
     engines: {node: '>=12.20.0'}
@@ -2731,8 +2727,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  satori@0.44.3:
-    resolution: {integrity: sha512-3Dj7zB2jc+806+YYinNID9nvdJK2AagSmpNeG/qeHY7Yq7jQ5EpMSQ8C5rLSw1PMxnrbQaQsQnCiEGzIKKq3HA==}
+  satori@0.60.3:
+    resolution: {integrity: sha512-PlIYxiddle3AaaPmmoPS8+w4ElDBM4tCFjmFxs0qrBHS7LuDz2XhVOAI8P2e9cUprpKL0Xw1x43Yf04npDqGfA==}
     engines: {node: '>=16'}
 
   satteri@0.10.5:
@@ -3127,20 +3123,20 @@ packages:
       vite:
         optional: true
 
-  vitest@5.0.3:
-    resolution: {integrity: sha512-xMw97S3rjdtj5dkVat7jCsqWBpvchs3RlpQctUqwJD0KkERk40vz2fJ77lDwW/Vzh/pk18eItYAzkodhSes3jQ==}
+  vitest@5.0.5:
+    resolution: {integrity: sha512-cPODOMF8YnkiiYtDdHo6n4wWmBrOBBbOIYH2d33M4l3CdNn72h+qMmO6uXffUN6A5AZFXNND/d+krS9mgkXRfg==}
     engines: {node: ^22.12.0 || ^24.0.0 || >=26.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@opentelemetry/api': ^1.9.0
       '@types/node': ^22.0.0 || >=24.0.0
-      '@vitest/browser-playwright': 5.0.3
-      '@vitest/browser-preview': 5.0.3
+      '@vitest/browser-playwright': 5.0.5
+      '@vitest/browser-preview': 5.0.5
       '@vitest/browser-webdriverio': ^5.0.0-beta.5 || >=5.0.0
-      '@vitest/coverage-istanbul': 5.0.3
-      '@vitest/coverage-v8': 5.0.3
-      '@vitest/ui': 5.0.3
+      '@vitest/coverage-istanbul': 5.0.5
+      '@vitest/coverage-v8': 5.0.5
+      '@vitest/ui': 5.0.5
       happy-dom: '*'
       jsdom: '*'
       vite: ^6.4.0 || ^7.0.0 || ^8.0.0
@@ -4288,25 +4284,25 @@ snapshots:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1)
 
-  '@vitest/mocker@5.0.3(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1))':
+  '@vitest/mocker@5.0.5(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
-      '@vitest/spy': 5.0.3
+      '@vitest/spy': 5.0.5
       estree-walker: 3.0.3
       magic-string: 1.4.3
     optionalDependencies:
       vite: 8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1)
 
-  '@vitest/mocker@5.0.3(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))':
+  '@vitest/mocker@5.0.5(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
-      '@vitest/spy': 5.0.3
+      '@vitest/spy': 5.0.5
       estree-walker: 3.0.3
       magic-string: 1.4.3
     optionalDependencies:
       vite: 8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)
 
-  '@vitest/spy@5.0.3': {}
+  '@vitest/spy@5.0.5': {}
 
   '@volar/kit@2.4.28(typescript@6.0.3)':
     dependencies:
@@ -5166,40 +5162,40 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  impit-darwin-arm64@0.14.5:
+  impit-darwin-arm64@0.14.6:
     optional: true
 
-  impit-darwin-x64@0.14.5:
+  impit-darwin-x64@0.14.6:
     optional: true
 
-  impit-linux-arm64-gnu@0.14.5:
+  impit-linux-arm64-gnu@0.14.6:
     optional: true
 
-  impit-linux-arm64-musl@0.14.5:
+  impit-linux-arm64-musl@0.14.6:
     optional: true
 
-  impit-linux-x64-gnu@0.14.5:
+  impit-linux-x64-gnu@0.14.6:
     optional: true
 
-  impit-linux-x64-musl@0.14.5:
+  impit-linux-x64-musl@0.14.6:
     optional: true
 
-  impit-win32-arm64-msvc@0.14.5:
+  impit-win32-arm64-msvc@0.14.6:
     optional: true
 
-  impit-win32-x64-msvc@0.14.5:
+  impit-win32-x64-msvc@0.14.6:
     optional: true
 
-  impit@0.14.5:
+  impit@0.14.6:
     optionalDependencies:
-      impit-darwin-arm64: 0.14.5
-      impit-darwin-x64: 0.14.5
-      impit-linux-arm64-gnu: 0.14.5
-      impit-linux-arm64-musl: 0.14.5
-      impit-linux-x64-gnu: 0.14.5
-      impit-linux-x64-musl: 0.14.5
-      impit-win32-arm64-msvc: 0.14.5
-      impit-win32-x64-msvc: 0.14.5
+      impit-darwin-arm64: 0.14.6
+      impit-darwin-x64: 0.14.6
+      impit-linux-arm64-gnu: 0.14.6
+      impit-linux-arm64-musl: 0.14.6
+      impit-linux-x64-gnu: 0.14.6
+      impit-linux-x64-musl: 0.14.6
+      impit-win32-arm64-msvc: 0.14.6
+      impit-win32-x64-msvc: 0.14.6
 
   imurmurhash@0.1.4: {}
 
@@ -5924,8 +5920,6 @@ snapshots:
 
   object-hash@3.0.0: {}
 
-  obug@2.2.1: {}
-
   obug@3.0.0: {}
 
   ofetch@1.5.1:
@@ -6293,7 +6287,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  satori@0.44.3:
+  satori@0.60.3:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
@@ -6704,15 +6698,15 @@ snapshots:
     optionalDependencies:
       vite: 8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1)
 
-  vitest@5.0.3(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1)):
+  vitest@5.0.5(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.3(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1))
+      '@vitest/mocker': 5.0.5(vite@8.3.4(@types/node@24.19.2)(jiti@1.21.7)(yaml@2.9.1))
       chai: 6.3.0
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
       magic-string: 1.4.3
-      obug: 2.2.1
+      obug: 3.0.0
       picomatch: 4.0.7
       std-env: 4.3.0
       tinybench: 6.2.2
@@ -6725,15 +6719,15 @@ snapshots:
     transitivePeerDependencies:
       - msw
 
-  vitest@5.0.3(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
+  vitest@5.0.5(@types/node@24.19.2)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.3(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+      '@vitest/mocker': 5.0.5(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
       chai: 6.3.0
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
       magic-string: 1.4.3
-      obug: 2.2.1
+      obug: 3.0.0
       picomatch: 4.0.7
       std-env: 4.3.0
       tinybench: 6.2.2
