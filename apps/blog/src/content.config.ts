@@ -19,6 +19,7 @@ const TAGS = [
   "plain-text-accounting",
   "rust",
   "snix",
+  "terminal-emulator",
 ] as const;
 
 const blog = defineCollection({
