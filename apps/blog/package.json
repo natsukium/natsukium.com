@@ -37,8 +37,8 @@
     "yaml": "^2.8.2"
   },
   "devDependencies": {
-    "@astrojs/react": "7.1.8",
-    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/react": "7.1.9",
+    "@astrojs/sitemap": "3.7.6",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.5",
     "@types/github-slugger": "2.0.0",
